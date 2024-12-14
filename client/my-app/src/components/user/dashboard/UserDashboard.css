@@ -5,13 +5,14 @@
 .desktop-1 {
   background: #0a4c56;
   height: 1024px;
+  width: 2350px;
   position: relative;
   overflow: hidden;
 }
 .rectangle-6 {
   background: #007b8b;
   border-radius: 0px 0px 40px 42px;
-  width: 1440px;
+  width: 2350px;
   height: 300px;
   position: absolute;
   left: 0px;
@@ -29,14 +30,14 @@
 }
 .rectangle-7 {
   background: #0a4c3e;
-  width: 1440px;
+  width: 2350px;
   height: 327px;
   position: absolute;
   left: 0px;
   top: 794px;
 }
 .image-6 {
-  width: 1440px;
+  width: 2350px;
   height: 672px;
   position: absolute;
   left: 0px;
@@ -50,14 +51,14 @@
   align-items: center;
   justify-content: flex-start;
   position: absolute;
-  left: 1204px;
+  left: 2000px;
   top: 897px;
 }
 .settings {
   flex-shrink: 0;
   width: 50px;
   height: 50px;
-  position: relative;
+  position:relative;
   overflow: visible;
 }
 .settings2 {
@@ -82,7 +83,7 @@
   width: 188px;
   height: 84px;
   position: absolute;
-  left: 1204px;
+  left: 2000px;
   top: 818px;
 }
 .logout-02 {
@@ -112,7 +113,7 @@
   align-items: center;
   justify-content: flex-start;
   position: absolute;
-  left: 1204px;
+  left: 2000px;
   top: 962px;
 }
 .help {
@@ -141,7 +142,7 @@
   width: 200px;
   height: 200px;
   position: absolute;
-  left: 21px;
+  left: 100px;
   top: 694px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -151,7 +152,7 @@
   width: 200px;
   height: 200px;
   position: absolute;
-  left: 245px;
+  left: 400px;
   top: 694px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -161,7 +162,7 @@
   width: 200px;
   height: 200px;
   position: absolute;
-  left: 469px;
+  left: 700px;
   top: 694px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -171,7 +172,7 @@
   width: 200px;
   height: 200px;
   position: absolute;
-  left: 699px;
+  left: 1000px;
   top: 694px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -181,7 +182,7 @@
   width: 200px;
   height: 200px;
   position: absolute;
-  left: 922px;
+  left: 1300px;
   top: 697px;
   box-shadow: inset 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
 }
@@ -226,7 +227,7 @@
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 81px;
+  left: 165px;
   top: 803px;
   width: 153px;
   height: 17px;
@@ -243,7 +244,7 @@
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 283px;
+  left: 435px;
   top: 788px;
   width: 162px;
   height: 30px;
@@ -260,7 +261,7 @@
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 292px;
+  left: 450px;
   top: 832px;
   width: 162px;
   height: 35px;
@@ -277,7 +278,7 @@
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 525px;
+  left: 755px;
   top: 793px;
   width: 175px;
   height: 28px;
@@ -294,7 +295,7 @@
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 507px;
+  left: 740px;
   top: 836px;
   width: 173px;
   height: 29px;
@@ -311,7 +312,7 @@
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 711px;
+  left: 1010px;
   top: 803px;
   width: 200px;
   height: 23px;
@@ -328,7 +329,7 @@
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 744px;
+  left:1050px;
   top: 835px;
   width: 146px;
   height: 29px;
@@ -345,7 +346,7 @@
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 973px;
+  left: 1360px;
   top: 807px;
   width: 144px;
   height: 29px;
@@ -357,7 +358,7 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  left: 315px;
+  left: 470px;
   top: 728px;
   overflow: visible;
 }
@@ -365,7 +366,7 @@
   width: 60px;
   height: 60px;
   position: absolute;
-  left: 539px;
+  left: 775px;
   top: 733px;
   overflow: visible;
 }
@@ -377,7 +378,7 @@
   justify-content: flex-start;
   width: 54px;
   position: absolute;
-  left: 763px;
+  left: 1070px;
   top: 734px;
 }
 .wallet-02 {
@@ -394,7 +395,7 @@
   align-items: center;
   justify-content: flex-start;
   position: absolute;
-  left: 985px;
+  left: 1375px;
   top: 733px;
 }
 .bag-04 {
