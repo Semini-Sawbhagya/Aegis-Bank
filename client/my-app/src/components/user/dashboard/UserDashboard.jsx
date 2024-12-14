@@ -20,7 +20,7 @@ const UserDashboard = () => {
        <img className="image-6" src={backgroundImage} alt="Background" />
 
        <div class="frame-15">
-       <button><img className="settings"  src={settings}/></button>
+       <img className="settings"  src={settings}/>
        <div class="settings2">settings</div>
     </div>
       <div class="frame-34">
