@@ -405,6 +405,9 @@
   position: relative;
   overflow: visible;
 }
+.home-01{
+  left: 80px;
+}
 .aegis-bank {
   color: #080637;
   text-align: left;
