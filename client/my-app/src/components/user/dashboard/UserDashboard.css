@@ -3,10 +3,11 @@
   box-sizing: border-box;
 }
 .desktop-1 {
+  display:flex;
   background: #0a4c56;
-  height: 1024px;
+  height: 100vh;
   width: 2350px;
-  position: relative;
+  /*position:  fixed;*/
   overflow: hidden;
 }
 .rectangle-6 {
@@ -196,13 +197,7 @@
   left: 91px;
   top: 734px;
 }
-.home-01 {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  position: relative;
-  overflow: visible;
-}
+
 .text {
   color: #000000;
   text-align: left;
@@ -239,6 +234,7 @@
   color: #ffffff;
   text-align: left;
   font-family: "Inter-SemiBold", sans-serif;
+  text-align: center;
   font-size: 24px;
   line-height: 22px;
   letter-spacing: -0.18px;
@@ -252,27 +248,30 @@
   align-items: center;
   justify-content: flex-start;
 }
-.details {
+.trans{
   color: #ffffff;
   text-align: left;
   font-family: "Inter-SemiBold", sans-serif;
+  text-align: center;
   font-size: 24px;
   line-height: 22px;
   letter-spacing: -0.18px;
   font-weight: 600;
   position: absolute;
-  left: 450px;
-  top: 832px;
+  left: 1025px;
+  top: 788px;
   width: 162px;
-  height: 35px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
+
 .money {
   color: #ffffff;
   text-align: left;
   font-family: "Inter-SemiBold", sans-serif;
+  text-align: center;
   font-size: 24px;
   line-height: 22px;
   letter-spacing: -0.18px;
@@ -286,57 +285,7 @@
   align-items: center;
   justify-content: flex-start;
 }
-.transfer {
-  color: #ffffff;
-  text-align: left;
-  font-family: "Inter-SemiBold", sans-serif;
-  font-size: 24px;
-  line-height: 22px;
-  letter-spacing: -0.18px;
-  font-weight: 600;
-  position: absolute;
-  left: 740px;
-  top: 836px;
-  width: 173px;
-  height: 29px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.transaction {
-  color: #ffffff;
-  text-align: left;
-  font-family: "Inter-SemiBold", sans-serif;
-  font-size: 24px;
-  line-height: 22px;
-  letter-spacing: -0.18px;
-  font-weight: 600;
-  position: absolute;
-  left: 1010px;
-  top: 803px;
-  width: 200px;
-  height: 23px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
-.history {
-  color: #ffffff;
-  text-align: left;
-  font-family: "Inter-SemiBold", sans-serif;
-  font-size: 24px;
-  line-height: 22px;
-  letter-spacing: -0.18px;
-  font-weight: 600;
-  position: absolute;
-  left:1050px;
-  top: 835px;
-  width: 146px;
-  height: 29px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-}
+
 .loans {
   color: #ffffff;
   text-align: left;
@@ -354,6 +303,14 @@
   align-items: center;
   justify-content: flex-start;
 }
+.home-01{
+  width: 60px;
+  height: 60px;
+  position: absolute;
+  left: 175px;
+  top: 728px;
+  overflow: visible;
+}
 .bank-note-01 {
   width: 60px;
   height: 60px;
@@ -370,43 +327,22 @@
   top: 733px;
   overflow: visible;
 }
-.frame-20 {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  align-items: center;
-  justify-content: flex-start;
-  width: 54px;
+.wallet-020{
+  width: 60px;
+  height: 60px;
   position: absolute;
   left: 1070px;
-  top: 734px;
-}
-.wallet-02 {
-  flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  position: relative;
-  overflow: visible;
-}
-.frame-16 {
-  display: flex;
-  flex-direction: row;
-  gap: 12px;
-  align-items: center;
-  justify-content: flex-start;
-  position: absolute;
-  left: 1375px;
   top: 733px;
+  overflow: visible;
 }
+
 .bag-04 {
-  flex-shrink: 0;
   width: 60px;
   height: 60px;
   position: relative;
+  left: 1380px;
+  top: 733px;
   overflow: visible;
-}
-.home-01{
-  left: 80px;
 }
 .aegis-bank {
   color: #080637;

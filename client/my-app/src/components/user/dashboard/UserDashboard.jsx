@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Routes, Route, Link, useNavigate } from 'react-router-dom';
 import MoneyTransfer from '../MoneyTransfer/MoneyTransfer';  // Adjust the path based on your folder structure
 import backgroundImage from '../../../assets/background.jpg';
 import logo from '../../../assets/image-40.png';
@@ -16,16 +17,10 @@ const UserDashboard = () => {
   const [activePage, setActivePage] = useState('home'); // State for active page
 
   // Render content based on activePage
-  const renderContent = () => {
-    switch (activePage) {
-      case 'home':
-        return <div>Welcome to Aegis Bank Dashboard!</div>;
-      case 'moneyTransfer':
-        return <MoneyTransfer />;
-      default:
-        return <div>Select a page</div>;
-    }
-  };
+  
+  const menuItems=[
+    {path: '/dashboard/account-details',img:account,text: 'Account-details'}
+  ];
 
   return (
     <div>
@@ -60,37 +55,69 @@ const UserDashboard = () => {
         <div className="rectangle-12"></div>
 
         {/* Home */}
-        <div className="frame-27" onClick={() => setActivePage('home')}>
+        <div>
+          <Link to= "/Money Tranfer">
           <img className="home-01" src={home} alt="Home" />
-          <div className="home">HOME</div>
-        </div>
-
-        {/* Money Transfer */}
-        <div className="frame-20" onClick={() => setActivePage('moneyTransfer')}>
-          <img className="currency-coin-dollar" src={money} alt="Money Transfer" />
-          <div className="money">MONEY</div>
-          <div className="transfer">TRANSFER</div>
+          </Link>
+          <div className='home'>
+            HOME
+          </div>
         </div>
 
         {/* Account */}
         <div>
-          <img className="bank-note-01" src={account} alt="Account" />
-          <div className="account">ACCOUNT</div>
+          <Link to="/MoneyTansfer">
+            <img className="bank-note-01" src={account} alt="Account" />
+          </Link>
+          <div className="account">
+            ACCOUNT <br /> DETAILS
+          </div>
+        </div>
+
+        {/* Money Transfer */}
+<div>
+  <Link to="/dashboard/money-transfer">
+    <img className="currency-coin-dollar" src={money} alt="Money Transfer" />
+  </Link>
+  <div className="money">
+    MONEY <br /> TRANSFER
+  </div>
+</div>
+
+
+
+        {/*Transaction History*/}
+        <div>
+          <Link to="/MoneyTansfer">
+          <img className="wallet-020" src={trans} alt="Transaction History" />
+          </Link>
+          <div className="trans">
+            TRANSACTION <br /> HISTORY
+          </div>
         </div>
 
         {/* Loans */}
-        <div className="frame-16">
+        <div>
+          <Link to="/MoneyTansfer">
           <img className="bag-04" src={loans} alt="Loans" />
-          <div className="loans">LOANS</div>
+          </Link>
+          <div className="loans">
+            Loans
+          </div>
         </div>
-
+        
         <div className="aegis-bank">AEGIS BANK</div>
       </div>
-
-      {/* Render selected page */}
-      <div className="content-area">{renderContent()}</div>
+     
+      <Routes>
+        <Route path="/money-transfer" element={<MoneyTransfer />} />
+      </Routes>
     </div>
   );
 };
 
+
+
 export default UserDashboard;
+
+
