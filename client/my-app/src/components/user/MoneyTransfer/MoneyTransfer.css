@@ -1,12 +1,68 @@
-/* MoneyTransfer1.css */
-.shadow {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-                0 0 15px rgba(0, 0, 255, 0.5); /* Base 3D glow color */
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  
-.shadow:hover {
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2),
-                0 0 25px rgba(0, 0, 255, 0.8); /* Brighter 3D glow color on hover */
-    transform: translateY(-3px);
-  }
+/* Custom styles */
+.card-container {
+  max-width: 600px;
+  margin: auto;
+  background-color: rgba(16, 38, 79, 0.418);
+  padding: 20px;
+  border-radius: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 20px;
+}
+
+.form-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.label {
+  display: block;
+  font-size: 0.875rem;
+  color: #4b5563;
+  margin-bottom: 8px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.input:read-only {
+  background-color: #f9fafb;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reset-button,
+.submit-button {
+  width: 48%;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.reset-button {
+  background-color: #f3f4f6;
+  border: 1px solid #d1d5db;
+  color: #4b5563;
+}
+
+.submit-button {
+  background-color: #094a1c;
+  border: none;
+  color: white;
+}
+
+.submit-button:hover {
+  background-color: #31a520;
+}

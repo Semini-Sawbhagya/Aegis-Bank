@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { Card, Typography, TextField, Autocomplete, FormControl, Button, Grid, Box } from "@mui/material";
+import { Card, Typography, TextField, Autocomplete, FormControl, Button, Grid2 as Grid, Box } from "@mui/material";
 import Cookies from 'js-cookie';
 import api from '../../../services/api';
 import './MoneyTransfer.css';
 
-function MoneyTransfer1() {
+function MoneyTransfer() {
     const [selectedAccount, setSelectedAccount] = useState("");
     const [userAccounts, setUserAccounts] = useState([]);
     const [beneficiaryName, setBeneficiaryName] = useState("");
@@ -185,4 +185,4 @@ function MoneyTransfer1() {
     );
 }
 
-export default MoneyTransfer1;
+export default MoneyTransfer;
