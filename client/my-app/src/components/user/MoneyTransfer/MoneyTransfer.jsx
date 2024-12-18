@@ -74,8 +74,8 @@ function MoneyTransfer() {
     };
 
     return (
-        <Box p={3}>
-            <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+        <Box className="MoneyTransfer" p={3}>
+            <Card className="card-container" sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
                 <Typography variant="h6" gutterBottom>
                     Money Transfer
                 </Typography>
@@ -99,6 +99,7 @@ function MoneyTransfer() {
                                 )}
                             />
                         </Grid>
+                        
                         <Grid item xs={12}>
                             <TextField
                                 label="Beneficiary Name"
@@ -108,6 +109,7 @@ function MoneyTransfer() {
                                 required
                             />
                         </Grid>
+                    
                         <Grid item xs={12}>
                             <TextField
                                 label="Beneficiary Account"
@@ -117,6 +119,7 @@ function MoneyTransfer() {
                                 required
                             />
                         </Grid>
+        
                         <Grid item xs={12}>
                             <TextField
                                 label="Beneficiary Bank"
@@ -161,7 +164,6 @@ function MoneyTransfer() {
                         <Grid item xs={6}>
                             <Button
                                 variant="outlined"
-                                color="secondary"
                                 fullWidth
                                 onClick={handleReset}
                             >
