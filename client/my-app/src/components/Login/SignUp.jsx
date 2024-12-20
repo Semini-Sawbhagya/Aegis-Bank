@@ -34,7 +34,7 @@ const SignUp = () => {
     <div className="login-container">
     <Container component="main" maxWidth="xs" sx={{ display: 'flex', justifyContent: 'center', minHeight: '100vh', alignItems: 'center'}}>
       <Card sx={{ borderRadius: 4 }}>
-        <Box
+        <Box className="box"
           sx={{
             display: 'flex',
             flexDirection: 'column',

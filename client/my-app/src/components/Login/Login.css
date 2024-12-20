@@ -1,0 +1,10 @@
+.login-container {
+    background-image: url('../../assets/background.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+.box{
+    background-color:#035a65;
+} 
+  
