@@ -55,7 +55,7 @@ router.post('/signup', validateRegistrationInput, async (req, res) => {
     res.status(500).json({ error: 'Error registering user', details: error.message });
   }
 });
-
++
 router.post('/login', validateLoginInput, async (req, res) => {
   console.log('------------------Validating login input------------------');
   const errors = validationResult(req);

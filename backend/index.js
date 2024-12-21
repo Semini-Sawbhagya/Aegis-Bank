@@ -42,12 +42,11 @@ db.getConnection((err) => {
     }
     console.log('Connected to the database.');
 });
-app.listen(8800, () => {
-  console.log("Backend server running on port 8800");
-});
 
-app.listen(8800, () => {
-    console.log('Connected to backend! Server is running on http://localhost:8800');
+
+const PORT = process.env.PORT || 8800; // Default to 8800 if PORT is not set
+app.listen(PORT, () => {
+    console.log(`Connected to backend! Server is running on http://localhost:${PORT}`);
 });
 
 // Logout route
