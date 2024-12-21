@@ -3,7 +3,7 @@ import Cookies from 'js-cookie';
 
 export const login = async (email, password) => {
   try {
-    return await api.post('/auth/login', { email, password });
+    return await api.post('http://localhost:3000/auth/login', { email, password });
   } catch (error) {
     console.error('Login error:', error.response ? error.response.data : error.message);
     throw error;
@@ -12,7 +12,7 @@ export const login = async (email, password) => {
 
 export const register = async (account_number, username, email, password) => {
   try {
-    return await api.post('/auth/signup', { account_number, username, email, password });
+    return await api.post('http://localhost:3000/auth/signup', { account_number, username, email, password });
   } catch (error) {
     console.error('Register error:', error.response ? error.response.data : error.message);
     throw error;
