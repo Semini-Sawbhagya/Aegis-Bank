@@ -7,9 +7,10 @@ import protectedRoutes from './routes/protected.js';
 import refreshRoutes from './routes/refresh.js';
 import authenticateToken from './middleware/auth.js';
 import staffServices from './services/Staff/staff_services.js';
-/*import managerRoutes from './routes/m-loans.js';
+/*import managerRoutes from './routes/m-loans.js';*/
 
 import { getPendingLoans } from './services/ManagerLoans/manager-loans.js';   
+/*
 import { employee_loans } from './services/EmployeeLoans/employee-loans.js';
 import { getLoanDetails, getCreditLimit, applyLoan, payLoanInstallment, getInstallmentAmount } from './services/Loan/loan_services.js';
 import { money_transfer } from './services/MoneyTransfer/money_transfer.js';
@@ -59,18 +60,18 @@ app.use('/staff', staffServices);
 // Define routes using async functions
 app.get("/accounts", getAccounts);
 app.get("/user_accounts", getUserAccounts);
-app.get("/accounts_summary", getAccountSummary);
+app.get("/accounts_summary", getAccountSummary);*/
 
-app.get("/loan_details", getLoanDetails);
-app.get("/credit-limit", getCreditLimit);
+/*app.get("/loan_details", getLoanDetails);
+/*app.get("/credit-limit", getCreditLimit);
 app.get("/savings_accounts", getSavingsAccounts);
 
 app.get("/recent_transactions/:customerId", getRecentTransactions);
 app.get("/transaction_History/:customerId", getTransactionsHistory);
-
+*/
 app.get("/manager-loans", getPendingLoans);
 
-
+/*
 // User info
 app.get("/user_info/:userId", getUserInfo);
 app.put("/user_info/:userId", updateUserInfo);
