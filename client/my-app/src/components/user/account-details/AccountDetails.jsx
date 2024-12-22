@@ -98,7 +98,7 @@ const AccountDetails = () => {
                 <button className="details-button" onClick={() => handleSelect(account)}>
                   {selectedAccount === account ? 'Hide Details ▲' : 'See Details ▼'}
                 </button>
-                {selectedAccount === account && renderAccountDetails(account)}
+                {selectedAccount === account && renderAccountDetails(account) }
               </div>
             ))
           ) : (
