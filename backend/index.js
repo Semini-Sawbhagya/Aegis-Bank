@@ -59,14 +59,15 @@ app.use('/staff', staffServices);
 
 // Define routes using async functions
 app.get("/accounts", getAccounts);
-app.get("/user_accounts", getUserAccounts);
-app.get("/accounts_summary", getAccountSummary);*/
+app.get("/user_accounts", getUserAccounts);*/
+app.get("/accounts_summary", getAccountSummary);
 
 /*app.get("/loan_details", getLoanDetails);
 /*app.get("/credit-limit", getCreditLimit);
-app.get("/savings_accounts", getSavingsAccounts);
+app.get("/savings_accounts", getSavingsAccounts);*/
 
 app.get("/recent_transactions/:customerId", getRecentTransactions);
+/*
 app.get("/transaction_History/:customerId", getTransactionsHistory);
 */
 app.get("/manager-loans", getPendingLoans);
@@ -118,12 +119,12 @@ app.post("/logout", logout);
 app.post("/deposit", depositFunds);
 app.post("/withdraw", withdrawFunds);
 app.post("/money_transfer", money_transfer);
-app.post("/employee_loans",employee_loans);
+app.post("/employee_loans",employee_loans);*/
 
 // Account details
 app.post("/account_details", getAccountDetails);
 app.post("/create_fixed_deposit", createFixedDeposit);
-*/
+
 // Existing routes...
 app.get("/", (req, res) => {
     res.json("Hello this is the backend");
