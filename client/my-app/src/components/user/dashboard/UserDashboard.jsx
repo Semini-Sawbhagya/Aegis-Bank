@@ -1,6 +1,7 @@
 import React from 'react';
 import { Routes, Route, Link } from 'react-router-dom';
 import MoneyTransfer from '../MoneyTransfer/MoneyTransfer'; // Adjust the path based on your folder structure
+import AccountDetails from '../account-details/AccountDetails';   
 import backgroundImage from '../../../assets/background.jpg';
 import logo from '../../../assets/image-40.png';
 import settingsIcon from '../../../assets/settings0.svg';
@@ -11,7 +12,10 @@ import loansIcon from '../../../assets/bag-040.svg';
 import accountIcon from '../../../assets/bank-note-010.svg';
 import moneyIcon from '../../../assets/currency-coin-dollar0.svg';
 import homeIcon from '../../../assets/home-010.svg';
+import back from '../../../assets/back.jpg';
 import './UserDashboard.css';
+import Home from '../home/Home';
+import Cookies from 'js-cookie';
 
 const UserDashboard = () => {
   // Menu items array for dynamic rendering
@@ -22,7 +26,8 @@ const UserDashboard = () => {
     { path: '/dashboard/transaction-history', img: transIcon, label: 'Transaction History' },
     { path: '/dashboard/loans', img: loansIcon, label: 'Loans' },
   ];
-
+  const userName = Cookies.get('username');
+  const userRole =  Cookies.get('role');
   return (
     <div className="user-dashboard">
       {/* Sidebar Section */}
@@ -52,12 +57,18 @@ const UserDashboard = () => {
         </div>
       </div>
 
+      
+
       {/* Main Content Section */}
-      <div className="main-content" >
+      <div className="main-content" backgroundImage={back} >
+        <div className="heading">
+          <p> Welcome, {userName}. (customer)</p>
+        </div>
         <img className="background" src={backgroundImage} alt="Background" />
         <Routes>
           <Route path="/money-transfer" element={<MoneyTransfer />} />
-          {/* Add other routes here */}
+          <Route path='/home' element={<Home/>} />
+          <Route path="/account-details" element={<AccountDetails/>}/>
         </Routes>
       </div>
     </div>

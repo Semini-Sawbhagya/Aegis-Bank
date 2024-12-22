@@ -100,6 +100,13 @@ body {
   background-color: #035a65;
   overflow: auto;
 }
+.heading{
+  text-align: right;
+  padding: 10px;
+  font-size: larger;
+  font-style: italic;
+  font-family: 'Lucida Sans';
+}
 
 .main-content .background {
   position: absolute;
