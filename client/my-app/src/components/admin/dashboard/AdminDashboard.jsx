@@ -30,7 +30,7 @@ import UpdateEmployeeUserDetails from '../employees/updateUserDetails';
 import UpdateEmployeeBranch from '../employees/updatebranchDetails';
 import CreateAccount from '../accounts/CreateAccount';
 import EmployeeLoans from '../../admin/Loans/EmployeeLoans/employeeLoans';
-import ManagerLoans from '../../admin/Loans/ManagerLoans/managerLoans';
+import ManagerLoans from '../../admin/Loans/ManagerLoans/managerLoans';//
 import Cookies from 'js-cookie';
 
 
