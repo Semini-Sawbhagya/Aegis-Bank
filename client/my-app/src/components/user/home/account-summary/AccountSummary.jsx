@@ -1,6 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, Typography, Box } from '@mui/material';
-//import './AccountSummary.css';
 import { account_summary } from '../../../../services/auth';
 import Cookies from 'js-cookie';
 import Chart from 'chart.js/auto';
