@@ -16,7 +16,7 @@ export default function TransactionHistoryCard() {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8800/recent_transactions/${customerId}`);
+        const response = await axios.get(`http://localhost:3000/recent_transactions/${customerId}`);
         setTransactions(response.data.map(transaction => ({
           ...transaction,
           amount: parseFloat(transaction.amount) || 0
