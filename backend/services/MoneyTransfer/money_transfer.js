@@ -24,5 +24,4 @@ async function money_transfer(req, res) {
         res.status(500).send('Money transfer failed');
     }
 }
-
 export { money_transfer };

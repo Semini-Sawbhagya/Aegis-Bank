@@ -21,7 +21,7 @@ export const register = async (account_number, username, email, password) => {
 
 export const account_summary = async (userId) => {
   try {
-    return await api.get(`http://localhost:8800/accounts_summary?customer_id=${userId}`);
+    return await api.get(`http://localhost:3000/accounts_summary?customer_id=${userId}`);
   } catch (error) {
     console.error('Account summary error:', error.response ? error.response.data : error.message);
     throw error;

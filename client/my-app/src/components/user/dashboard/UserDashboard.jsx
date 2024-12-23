@@ -16,7 +16,11 @@ import back from '../../../assets/back.jpg';
 import './UserDashboard.css';
 import Home from '../home/Home';
 import Cookies from 'js-cookie';
-
+import Loans from '../loans/Loans';
+import ApplyLoan from '../loans/ApplyLoan';
+import LoanDetails from '../loans/LoanDetails';
+import LoanPayment from '../loans/LoanPayment';
+import TransactionHistory from '../transaction-history/transaction';
 const UserDashboard = () => {
   // Menu items array for dynamic rendering
   const menuItems = [
@@ -24,7 +28,7 @@ const UserDashboard = () => {
     { path: '/dashboard/account-details', img: accountIcon, label: 'Account Details' },
     { path: '/dashboard/money-transfer', img: moneyIcon, label: 'Money Transfer' },
     { path: '/dashboard/transaction-history', img: transIcon, label: 'Transaction History' },
-    { path: '/dashboard/loans', img: loansIcon, label: 'Loans' },
+    { path: '/dashboard/loans/apply', img: loansIcon, label: 'Loans' },
   ];
   const userName = Cookies.get('username');
   const userRole =  Cookies.get('role');
@@ -69,6 +73,12 @@ const UserDashboard = () => {
           <Route path="/money-transfer" element={<MoneyTransfer />} />
           <Route path='/home' element={<Home/>} />
           <Route path="/account-details" element={<AccountDetails/>}/>
+          <Route path="loans" element={<Loans/>}>
+            <Route path="apply" element={<ApplyLoan/>}/>
+            <Route path="payment" element={<LoanPayment/>}/>
+            <Route path="details" element={<LoanDetails/>}/>
+          </Route>
+          <Route path="transaction-history" element={<TransactionHistory/>}/>
         </Routes>
       </div>
     </div>
