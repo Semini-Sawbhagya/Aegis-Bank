@@ -3,7 +3,7 @@ import { Routes, Route, Link } from 'react-router-dom';
 import MoneyTransfer from '../MoneyTransfer/MoneyTransfer'; // Adjust the path based on your folder structure
 import AccountDetails from '../account-details/AccountDetails';   
 import backgroundImage from '../../../assets/background.jpg';
-import logo from '../../../assets/image-40.png';
+import logo from '../../../assets/AegisLogo.png';
 import settingsIcon from '../../../assets/settings0.svg';
 import logoutIcon from '../../../assets/logout-020.svg';
 import helpIcon from '../../../assets/help0.svg';
@@ -21,6 +21,7 @@ import ApplyLoan from '../loans/ApplyLoan';
 import LoanDetails from '../loans/LoanDetails';
 import LoanPayment from '../loans/LoanPayment';
 import TransactionHistory from '../transaction-history/transaction';
+import Settings from "../../user/settings/Settings";
 const UserDashboard = () => {
   // Menu items array for dynamic rendering
   const menuItems = [
@@ -29,6 +30,7 @@ const UserDashboard = () => {
     { path: '/dashboard/money-transfer', img: moneyIcon, label: 'Money Transfer' },
     { path: '/dashboard/transaction-history', img: transIcon, label: 'Transaction History' },
     { path: '/dashboard/loans/apply', img: loansIcon, label: 'Loans' },
+    
   ];
   const userName = Cookies.get('username');
   const userRole =  Cookies.get('role');
@@ -47,8 +49,10 @@ const UserDashboard = () => {
         </nav>
         <div className="sidebar-footer">
           <div className="settings">
+            <Link to="/dashboard/settings">
             <img src={settingsIcon} alt="Settings" />
             <span>Settings</span>
+            </Link>
           </div>
           <div className="help">
             <img src={helpIcon} alt="Help" />
@@ -79,6 +83,7 @@ const UserDashboard = () => {
             <Route path="details" element={<LoanDetails/>}/>
           </Route>
           <Route path="transaction-history" element={<TransactionHistory/>}/>
+          <Route path="settings" element={<Settings />} />
         </Routes>
       </div>
     </div>

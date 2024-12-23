@@ -20,7 +20,7 @@ body {
 /* Sidebar */
 .sidebar {
   width: 260px;
-  background-color: #007B8B;
+  background-color: #261502;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,7 +58,7 @@ body {
 }
 
 .menu-item:hover {
-  background-color: #34495e;
+  background-color: #614915;
   color: #ffffff;
 }
 
@@ -97,15 +97,20 @@ body {
 .main-content {
   flex-grow: 1;
   position: relative;
-  background-color: #035a65;
+  background-image: url('../../../assets/back.jpg');
+  background-size: cover;
+  background-position: center;
   overflow: auto;
 }
+
 .heading{
   text-align: right;
   padding: 10px;
   font-size: larger;
   font-style: italic;
   font-family: 'Lucida Sans';
+  color:white;
+  background-color:#261502 ;
 }
 
 .main-content .background {
