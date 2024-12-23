@@ -1,5 +1,5 @@
 import db from '../Config/database.js';
-import bcrypt from 'bcrypt';
+import bcrypt from 'bcryptjs';
 
 async function getUserInfo(req, res) {
     const userId = req.params.userId;
