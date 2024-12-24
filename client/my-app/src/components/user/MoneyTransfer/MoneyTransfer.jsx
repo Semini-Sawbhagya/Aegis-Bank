@@ -75,114 +75,118 @@ function MoneyTransfer() {
 
     return (
         <Box className="MoneyTransfer" p={3}>
-            <Card className="card-container" sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+            <Card className="card-container" sx={{  margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '1 px', alignItems:'center', backgroundColor:"#083010", height:"80vh", width:"70vh"}}>
                 <Typography variant="h6" gutterBottom>
                     Money Transfer
                 </Typography>
                 <form onSubmit={handleSubmit}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12}>
-                            <Autocomplete
-                                options={userAccounts}
-                                getOptionLabel={(option) => option.account_number}
-                                value={userAccounts.find(account => account.account_number === selectedAccount) || null}
-                                onChange={(event, newValue) => {
-                                    setSelectedAccount(newValue ? newValue.account_number : '');
-                                }}
-                                renderInput={(params) => (
-                                    <TextField 
-                                        {...params} 
-                                        label="Select Account" 
-                                        fullWidth 
-                                        required 
-                                    />
-                                )}
-                            />
-                        </Grid>
-                        
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Beneficiary Name"
-                                value={beneficiaryName}
-                                onChange={(e) => setBeneficiaryName(e.target.value)}
-                                fullWidth
-                                required
-                            />
-                        </Grid>
-                    
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Beneficiary Account"
-                                value={beneficiaryAccount}
-                                onChange={(e) => setBeneficiaryAccount(e.target.value)}
-                                fullWidth
-                                required
-                            />
-                        </Grid>
-        
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Beneficiary Bank"
-                                value={bankName}
-                                InputProps={{
-                                    readOnly: true,
-                                }}
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Currency"
-                                value="$"
-                                InputProps={{
-                                    readOnly: true,
-                                }}
-                                fullWidth
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                type="number"
-                                label="Transfer Amount"
-                                value={transferAmount}
-                                onChange={(e) => setTransferAmount(e.target.value)}
-                                fullWidth
-                                required
-                            />
-                        </Grid>
-                        <Grid item xs={12}>
-                            <TextField
-                                label="Description"
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                                multiline
-                                rows={4}
-                                fullWidth
-                                required
-                            />
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Button
-                                variant="outlined"
-                                fullWidth
-                                onClick={handleReset}
-                            >
-                                Reset
-                            </Button>
-                        </Grid>
-                        <Grid item xs={6}>
-                            <Button className="button"
-                                type="submit"
-                                variant="contained"
-                                color="primary"
-                                fullWidth
-                            >
-                                Submit
-                            </Button>
-                        </Grid>
-                    </Grid>
-                </form>
-            </Card>
+    <Box display="flex" flexDirection="column" gap={2}>
+        <Autocomplete
+            options={userAccounts}
+            getOptionLabel={(option) => option.account_number}
+            value={userAccounts.find(account => account.account_number === selectedAccount) || null}
+            onChange={(event, newValue) => {
+                setSelectedAccount(newValue ? newValue.account_number : '');
+            }}
+            renderInput={(params) => (
+                <TextField 
+                    {...params} 
+                    label="Select Account" 
+                    fullWidth 
+                    required 
+                    InputProps={{
+                        sx: { height: 40 },
+                    }}
+                />
+            )}
+        />
+        <TextField 
+            label="Beneficiary Name"
+            value={beneficiaryName}
+            onChange={(e) => setBeneficiaryName(e.target.value)}
+            fullWidth
+            required
+            InputProps={{
+                sx: { height: 40 },
+            }}
+        />
+        <TextField
+            label="Beneficiary Account"
+            value={beneficiaryAccount}
+            onChange={(e) => setBeneficiaryAccount(e.target.value)}
+            fullWidth
+            required
+            InputProps={{
+                sx: { height: 40 },
+            }}
+        />
+        <TextField
+            label="Beneficiary Bank"
+            value={bankName}
+            InputProps={{
+                readOnly: true,
+                sx: { height: 40 },
+
+            }}
+            fullWidth
+           
+        />
+        <TextField
+            label="Currency"
+            value="$"
+            InputProps={{
+                readOnly: true,
+                sx: { height: 40 },
+            }}
+            fullWidth
+        />
+        <TextField
+            type="number"
+            label="Transfer Amount"
+            value={transferAmount}
+            onChange={(e) => setTransferAmount(e.target.value)}
+            fullWidth
+            required
+            InputProps={{
+                readOnly: true,
+                sx: { height: 40 },
+            }}
+        />
+        <TextField
+            label="Description"
+            value={description}
+            onChange={(e) => setDescription(e.target.value)}
+            multiline
+            rows={4}
+            fullWidth
+            required
+            InputProps={{
+                readOnly: true,
+                sx: { height: 80 },
+            }}
+        />
+        <Box display="flex" justifyContent="space-between">
+            <Button
+                variant="outlined"
+                onClick={handleReset}
+                fullWidth
+                sx={{ marginRight: 1 }}
+            >
+                Reset
+            </Button>
+            <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                fullWidth
+                sx={{ marginLeft: 1 }}
+            >
+                Submit
+            </Button>
+        </Box>
+    </Box>
+</form>
+</Card>
         </Box>
     );
 }

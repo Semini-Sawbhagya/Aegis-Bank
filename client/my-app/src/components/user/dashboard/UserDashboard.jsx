@@ -32,8 +32,14 @@ const UserDashboard = () => {
     { path: '/dashboard/loans/apply', img: loansIcon, label: 'Loans' },
     
   ];
+  const footItems=[
+    { path: '/dashboard/settings', img: settingsIcon , label: 'Settings' },
+    { path: '/dashboard/help', img: helpIcon , label: 'Help' },
+    { path: '/dashboard/logout', img: logoutIcon , label: 'Logout' },
+  ]
   const userName = Cookies.get('username');
   const userRole =  Cookies.get('role');
+  console.log(userRole);
   return (
     <div className="user-dashboard">
       {/* Sidebar Section */}
@@ -48,20 +54,14 @@ const UserDashboard = () => {
           ))}
         </nav>
         <div className="sidebar-footer">
-          <div className="settings">
-            <Link to="/dashboard/settings">
-            <img src={settingsIcon} alt="Settings" />
-            <span>Settings</span>
+          <nav>
+          {footItems.map((item, index) => (
+            <Link key={index} to={item.path} className="menu-item" aria-label={item.label}>
+              <img src={item.img} alt={item.label} />
+              <span>{item.label}</span>
             </Link>
-          </div>
-          <div className="help">
-            <img src={helpIcon} alt="Help" />
-            <span>Help</span>
-          </div>
-          <div className="logout">
-            <img src={logoutIcon} alt="Logout" />
-            <span>Logout</span>
-          </div>
+          ))}
+          </nav>
         </div>
       </div>
 
@@ -70,7 +70,7 @@ const UserDashboard = () => {
       {/* Main Content Section */}
       <div className="main-content" backgroundImage={back} >
         <div className="heading">
-          <p> Welcome, {userName}. (customer)</p>
+          <p> Welcome, {userName}.(Customer)</p>
         </div>
         <img className="background" src={backgroundImage} alt="Background" />
         <Routes>

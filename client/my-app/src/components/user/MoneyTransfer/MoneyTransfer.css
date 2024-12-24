@@ -1,115 +1,77 @@
-/* General layout for the Money Transfer page */
+/* MoneyTransfer.css */
+
+/* General styles */
 .MoneyTransfer {
+  min-height: 70vh;
   display: flex;
-  justify-content: center;
   align-items: center;
-  height: 100vh;
+  justify-content: center;
 }
 
-.MoneyTransfer.card-container {
-  width: 100%;
-  max-width: 600px;
-  margin: 20px auto;
-  padding: 20px;
-  border-radius: 8px;
-  background-color: #831a1a;
+/* Card container styles */
+.card-container {
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
 }
 
-/* Typography styling */
-.MoneyTransfer h6 {
-  font-size: 24px;
-  font-weight: 600;
-  margin-bottom: 20px;
+/* Typography */
+.card-container .MuiTypography-root {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
   text-align: center;
-  color: #333;
 }
 
-/* Form input fields */
+/* Input fields */
 .MoneyTransfer .MuiTextField-root {
-  margin-bottom: 16px;
-}
-
-.MoneyTransfer.MuiTextField-root label {
-  font-size: 14px;
-  font-weight: 500;
-  color: #570e0e;
-}
-
-/* Buttons styling */
-.MoneyTransfer.button {
-  background-color: #007bff;
-  color: white;
-  text-transform: none;
-  padding: 12px;
+  background-color: #fafafa;
   border-radius: 4px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s;
-  top:80%;
 }
 
-.MoneyTransfer .button:hover {
-  background-color: #0056b3;
+.MoneyTransfer .MuiInputBase-input {
+  font-size: 14px;
+}
+
+/* Autocomplete dropdown */
+.MoneyTransfer .MuiAutocomplete-inputRoot {
+  padding: 5px;
+  background-color: #fafafa;
+  border-radius: 4px;
+}
+
+/* Buttons */
+.button {
+  background-color: #1976d2;
+  color: #ffffff;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #145a86;
 }
 
 .MoneyTransfer .MuiButton-outlined {
-  border-color: #073b30;
-  color: #06422d;
+  color: #1976d2;
+  border-color: #1976d2;
 }
 
 .MoneyTransfer .MuiButton-outlined:hover {
-  background-color: #073b30;
-  color: #47b17e;
+  background-color: #f0f8ff;
 }
 
-/* Grid styling for form layout */
-.MoneyTransfer .MuiGrid-root {
-  margin-bottom: 16px;
-}
-
-/* Box and Card styling */
-.MoneyTransfer .MuiBox-root {
-  padding: 24px;
-}
-
-.MoneyTransfer .MuiCard-root {
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-  background-color: #145c61;
-  height: 80%;
-  width: 50%;
-}
-
-/* Input styling for read-only fields */
-.MoneyTransfer .MuiInputBase-input[readonly] {
-  color: #777;
-}
-
-/* Spacing for the form and button container */
+/* Grid layout adjustments */
 .MoneyTransfer .MuiGrid-item {
-  margin-bottom: 30px;
+  padding: 10px;
 }
 
-/* Form Reset and Submit Button layout */
-.MoneyTransfer .MuiGrid-item:nth-child(1),
-.MoneyTransfer .MuiGrid-item:nth-child(2) {
-  display: flex;
-  justify-content: center;
-}
-
-/* Additional styles for responsiveness */
+/* Responsive design */
 @media (max-width: 600px) {
-  .MoneyTransfer.card-container {
-    width: 90%;
-    padding: 20px;
-    background-color: #570e0e;
+  .card-container {
+    padding: 15px;
+    margin-top: 10px;
   }
 
-  .MoneyTransfer h6 {
-    font-size: 20px;
-  }
-
-  .MoneyTransfer.MuiTextField-root {
-    margin-bottom: 12px;
+  .MoneyTransfer .MuiTypography-root {
+    font-size: 18px;
   }
 }
