@@ -1,0 +1,53 @@
+.shadow {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
+                0 0 15px rgba(222, 162, 11, 0.92); /* Base 3D glow color */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+  
+.shadow:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2),
+                0 0 25px rgba(222, 162, 11, 0.92); /* Brighter 3D glow color on hover */
+    transform: translateY(-3px);
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.settings-container {
+    width: 600px;
+    margin: 10px auto;
+    margin-bottom: 20px;
+}
+  
+.form-container {
+    width: 600px;
+    margin: 10px auto;
+    padding: 20px;
+    border: 1px solid rgba(222, 162, 11, 0.92);
+    border-radius: 5px;
+    background-color: #083010;
+}
+
+.phone-numbers-container {
+    display: flex;
+}
+  
+label {
+    display: block;
+    margin-bottom: 5px;
+    color:#ccc;
+}
+  
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
