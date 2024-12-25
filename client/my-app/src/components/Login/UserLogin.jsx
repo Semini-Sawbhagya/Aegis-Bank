@@ -34,7 +34,7 @@ const UserLogin = () => {
           console.log('Local Storage:', localStorage.getItem('user'));
           console.log('Navigatning to dashboard');
           
-          navigate('/dashboard');
+          navigate('/dashboard/home');
 
         }else if (response.data.role === 'manager' || response.data.role === 'employee') {
 
