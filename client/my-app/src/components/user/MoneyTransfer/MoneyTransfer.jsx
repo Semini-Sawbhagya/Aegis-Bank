@@ -76,11 +76,11 @@ function MoneyTransfer() {
     return (
         <Box className="MoneyTransfer" p={3}>
             <Card className="card-container" sx={{  margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '1 px', alignItems:'center', backgroundColor:"#083010", height:"80vh", width:"70vh"}}>
-                <Typography variant="h6" gutterBottom>
+                <Typography variant="h6" gutterBottom color="white">
                     Money Transfer
                 </Typography>
                 <form onSubmit={handleSubmit}>
-    <Box display="flex" flexDirection="column" gap={2}>
+    <Box display="flex" flexDirection="column" gap={2} >
         <Autocomplete
             options={userAccounts}
             getOptionLabel={(option) => option.account_number}
@@ -94,9 +94,6 @@ function MoneyTransfer() {
                     label="Select Account" 
                     fullWidth 
                     required 
-                    InputProps={{
-                        sx: { height: 40 },
-                    }}
                 />
             )}
         />
@@ -109,6 +106,7 @@ function MoneyTransfer() {
             InputProps={{
                 sx: { height: 40 },
             }}
+            
         />
         <TextField
             label="Beneficiary Account"
@@ -148,7 +146,6 @@ function MoneyTransfer() {
             fullWidth
             required
             InputProps={{
-                readOnly: true,
                 sx: { height: 40 },
             }}
         />
@@ -161,29 +158,42 @@ function MoneyTransfer() {
             fullWidth
             required
             InputProps={{
-                readOnly: true,
                 sx: { height: 80 },
             }}
         />
         <Box display="flex" justifyContent="space-between">
-            <Button
-                variant="outlined"
-                onClick={handleReset}
-                fullWidth
-                sx={{ marginRight: 1 }}
-            >
-                Reset
-            </Button>
-            <Button
-                type="submit"
-                variant="contained"
-                color="primary"
-                fullWidth
-                sx={{ marginLeft: 1 }}
-            >
-                Submit
-            </Button>
-        </Box>
+    <Button
+        variant="outlined"
+        onClick={handleReset}
+        fullWidth
+        sx={{
+            marginRight: 1,
+            backgroundColor: "#614915",
+            color: "white",
+            '&:hover': {
+                backgroundColor: "#614915", // Hover effect
+            },
+        }}
+    >
+        Reset
+    </Button>
+    <Button
+        type="submit"
+        variant="contained"
+        fullWidth
+        sx={{
+            marginLeft: 1,
+            backgroundColor: "#614915",
+            color: "white",
+            '&:hover': {
+                backgroundColor: "#614915", // Hover effect
+            },
+        }}
+    >
+        Submit
+    </Button>
+</Box>
+
     </Box>
 </form>
 </Card>

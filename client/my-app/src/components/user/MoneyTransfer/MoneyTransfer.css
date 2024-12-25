@@ -40,19 +40,19 @@
 
 /* Buttons */
 .button {
-  background-color: #1976d2;
+  background-color: #a9920e;
   color: #ffffff;
   font-weight: bold;
   transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #145a86;
+  background-color: #d7b51e;
 }
 
 .MoneyTransfer .MuiButton-outlined {
-  color: #1976d2;
-  border-color: #1976d2;
+  color: #d2b019;
+  border-color: #2b6f06;
 }
 
 .MoneyTransfer .MuiButton-outlined:hover {
