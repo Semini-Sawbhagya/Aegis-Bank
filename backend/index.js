@@ -58,8 +58,8 @@ app.use('/staff', staffServices);
 /*app.use('/manager', managerRoutes);*/
 
 // Define routes using async functions
-/*app.get("/accounts", getAccounts);
-app.get("/user_accounts", getUserAccounts);*/
+app.get("/accounts", getAccounts);
+app.get("/user_accounts", getUserAccounts);
 app.get("/accounts_summary", getAccountSummary);
 
 app.get("/loan_details", getLoanDetails);

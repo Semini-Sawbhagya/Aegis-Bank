@@ -121,7 +121,7 @@ export default function TransactionHistoryCard() {
         <button className={`filter-button ${filter.dateRange === 'all' ? 'active' : ''}`} onClick={() => handleDateRangeFilterChange('all')}>All transactions</button>
       </div>
 
-      <Card className="transaction-card" sx={{ maxWidth: '600px', margin: 'auto', borderRadius: 4, marginTop: '20px'}}>
+      <Card className="transaction-card" sx={{ maxWidth: '600px', margin: 'auto', borderRadius: 4, marginTop: '20px', backgroundColor:"#083010",  color:"white"}} >
         <CardContent>
           <Typography variant="h6">
             Transaction History
@@ -155,6 +155,7 @@ export default function TransactionHistoryCard() {
               </TableContainer>
 
               <TablePagination
+                color='white'
                 rowsPerPageOptions={[5, 10]}
                 component="div"
                 count={filteredTransactions.length}
