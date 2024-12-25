@@ -87,7 +87,7 @@ const LoanPayment = () => {
             margin="normal"
             disabled
           />
-          <Button type="submit" variant="contained" color="primary">
+          <Button type="submit" variant="contained" color="secondary">
             Pay Installment
           </Button>
         </form>
