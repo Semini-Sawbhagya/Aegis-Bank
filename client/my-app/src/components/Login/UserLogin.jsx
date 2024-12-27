@@ -51,7 +51,7 @@ const UserLogin = () => {
         console.log('Local Storage:', localStorage.getItem('user'));
         console.log('Navigatning to dashboard');
         
-        navigate('/admin-dashboard');
+        navigate('/admin_dashboard');
 
         }
       } else {
