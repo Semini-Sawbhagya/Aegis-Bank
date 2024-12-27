@@ -1,27 +1,30 @@
-import React, { useState } from 'react';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import cookies from 'js-cookie';
-import { 
-  faMoneyBillTransfer, faWallet, faGear, 
-  faArrowRightFromBracket, faCircleQuestion, 
-  faCaretRight, faSackDollar, faPeopleGroup,
-  faUsers, faFileInvoiceDollar, faCoins
-} from '@fortawesome/free-solid-svg-icons';
-
-import {Routes, Link, useNavigate, Route, Navigate} from 'react-router-dom';
-import { logout } from '../../../services/auth';
-
+import React, {useState}from 'react';
+import { Routes, Route, Link,useNavigate, Navigate } from 'react-router-dom';  
+import backgroundImage from '../../../assets/background.jpg';
+import logo from '../../../assets/AegisLogo.png';
+import settingsIcon from '../../../assets/settings0.svg';
+import logoutIcon from '../../../assets/logout-020.svg';
+import helpIcon from '../../../assets/help0.svg';
+import transIcon from '../../../assets/wallet-020.svg';
+import loansIcon from '../../../assets/bag-040.svg';
+import accountIcon from '../../../assets/bank-note-010.svg';
+import customerIcon from '../../../assets/customer.png';
+import employeeIcon from '../../../assets/employee.png';
+import reportIcon from '../../../assets/reports.svg';
+import fixedDepositIcon from '../../../assets/fixedDeposits.svg';
+import back from '../../../assets/back.jpg';
 import './AdminDashboard.css';
-
+import { logout } from '../../../services/auth';
+import Cookies from 'js-cookie';
 import AddCustomers from '../customers/AddCustomers';
 import GetCustomerDetails from '../customers/GetCustomerDetails';
 import Customers from '../customers/Customers';
 import Reports from '../reports/Reports';
 import BranchTransactionReport from '../reports/BranchTransactionReport';
 import BranchLatePaymentsReport from '../reports/BranchLatePaymentsReport';
-import Transactions from '../transactions/Transactions';
+import Transactions from '../transactions/transactions';
 import Settings from '../../admin/settings/Settings';
-import ApplyFixedDeposit from '../FixedDeposits/fixedDeposits';
+import FixedDeposit from '../FixedDeposits/fixedDeposits';
 import Employee from '../employees/Employees';
 import AddEmployeeForm from '../employees/AddEmployees';
 import RemoveEmployee from '../employees/removeEmployee';
@@ -30,147 +33,110 @@ import UpdateEmployeeUserDetails from '../employees/updateUserDetails';
 import UpdateEmployeeBranch from '../employees/updatebranchDetails';
 import CreateAccount from '../accounts/CreateAccount';
 import EmployeeLoans from '../../admin/Loans/EmployeeLoans/employeeLoans';
-import ManagerLoans from '../../admin/Loans/ManagerLoans/managerLoans';//
-import Cookies from 'js-cookie';
+import ManagerLoans from '../../admin/Loans/ManagerLoans/managerLoans';
 
 
-const DashboardSidebar = () => {
-  const [isSidebarClosed, setSidebarClosed] = useState(true);
-  const navigate = useNavigate();
+const AdminDashboard = () => {
 
-  const userName = Cookies.get('username') || 'User'; // Fallback to 'User' if username is not found
-  const userRole = Cookies.get('role') || 'employee'; // Fallback to 'employee' if role is not found
+  const userName = Cookies.get('username');
+  const userRole =  Cookies.get('role');
+  console.log(userRole);
 
-  console.log('User:', userName, userRole); //! Debugging
 
-  const toggleSidebar = () => setSidebarClosed(!isSidebarClosed);
-  
   const handleLogout = async () => {
-    const token = cookies.get('refreshToken');
-    if (!token) {
-      console.error('\\Logout error: Missing token//');
-      return;
+    const token = Cookies.get('refreshToken');
+    if(!token){
+        console.error("Logout error ! : Missing Token");
+        return;
     }
     console.log('Token:', token);
     try {
-      console.log('Logout request PROCESSING');
-      await logout(token);
-      navigate('/login');
-    } catch (error) {
-      console.error('Logout error:', error.response ? error.response.data : error.message);
-      console.error('Token:', token);
+      console.log("Logout request porcessing");
+      await logout (token);
+      Navigate('/login');
+    }catch( error){
+      console.error('Logout error:', error.response? error.response.data:error.message);
+      console.error('Token :', token);
     }
   };
-
+  // Menu items array for dynamic rendering
   const menuItems = [
-    { path: '/admin-dashboard/customers/get-customer-details', icon: faUsers, text: 'Customers' },
-    ...(userRole === 'manager' ? [{ path: '/admin-dashboard/employee/add-employee', icon: faPeopleGroup, text: 'Employees' }] : []), // Show only to managers
-    { path: '/admin-dashboard/createaccount', icon: faWallet, text: 'Create Account' },
-    { path: '/admin-dashboard/transactions', icon: faMoneyBillTransfer, text: 'Transactions' },
-    { path: '/admin-dashboard/fixed-deposits', icon: faCoins, text: 'Fixed Deposits' },
-    ...(userRole === 'manager' ? [{ path: '/admin-dashboard/manager-loans', icon: faSackDollar, text: 'Loans' }] : []), // Show only to managers
-    ...(userRole === 'employee' ? [{ path: '/admin-dashboard/employee-loans', icon: faSackDollar, text: 'Loans' }] : []), // Show only to employees
-    ...(userRole === 'manager' ? [{ path: '/admin-dashboard/reports/transaction-report', icon: faFileInvoiceDollar, text: 'Reports' }] : []) // Show only to managers
+    { path: '/admin_dashboard/customers', img: customerIcon, label: 'Customers' },
+    ...(userRole === 'manager'?[{paht: '/admin_dashboard/employees/add-employee', img: employeeIcon, label: 'Employees' },]:[]),
+    { path: '/admin_dashboard/create_account', img: accountIcon, label: 'Create Accounts' },
+    { path: '/admin_dashboard/transactions', img: transIcon, label: 'Transactions' },
+    { path: '/admin_dashboard/fixed_deposits', img: fixedDepositIcon, label: 'Fixed Deposits' },
+    ...(userRole === 'manager' ? [{ path: '/admin_dashboard/manager_loans', img: loansIcon, label: 'Manager Loans' }] : []),
+    ...(userRole === 'employee' ? [{ path: '/admin_dashboard/employee_loans', img: loansIcon, label: 'Employee Loans' }] : []),
+    ...(userRole === 'manager'?[{path:'admin_dashboard/reports/transaction-reports',img:reportIcon,label:' Reports'}]:[]),
   ];
-
+  const footItems=[
+    { path: '/admin_dashboard/settings', img: settingsIcon , label: 'Settings' },
+    { path: '/dashboard/help', img: helpIcon , label: 'Help' },
+    { path: '/dashboard/logout', img: logoutIcon , label: 'Logout' }
+  ]
+  
   return (
-    <div className="body">
-      <nav className={`sidebar ${isSidebarClosed ? 'close' : ''}`}>
-        <header>
-          <div className="image-text">
-            <span className="image">
-              <img src="https://cf-vectorizer-live.s3.amazonaws.com/vectorized/2lNO9ykbvoI6dXm568P2qXGrFfQ/2lNOEmLgmd3NUzrav2Oc0zsvjrV.svg" alt="" />
-            </span>
-            <div className="text logo-text">
-              <span className="name">Seychelles</span>
-              <span className="name">Trust Bank</span>
-            </div>
-          </div>
-          <FontAwesomeIcon icon={faCaretRight} className='bx bx-chevron-right toggle' onClick={toggleSidebar}/>
-        </header>
-
-        <div className="menu-bar">
-          <div className="menu">
-            <ul className="menu-links">
-              {menuItems.map((item, index) => (
-                <li className="nav-link" key={index}>
-                  <Link to={item.path} onClick={()=>navigate(item.path)}>
-                    <FontAwesomeIcon icon={item.icon} className='icon'/>
-                    <span className="text nav-text">{item.text}</span>
-                  </Link>
-                  {item.subItems && (
-                    <ul className="sub-menu">
-                      {item.subItems.map((subItem, subIndex) => (
-                        <li key={subIndex}>
-                          <Link to={subItem.path} onClick={() => navigate(subItem.path)}>
-                            <span className="text nav-text">{subItem.text}</span>
-                          </Link>
-                        </li>
-                      ))}
-                    </ul>
-                  )}
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="bottom-content">
-            <li className="nav-link">
-              <Link to="/admin-dashboard/settings">
-                <FontAwesomeIcon icon={faGear} className='icon'/>
-                <span className="text nav-text">Settings</span>
-              </Link>
-            </li>
-            <li>
-              <a href="#" onClick={handleLogout}>
-                <FontAwesomeIcon icon={faArrowRightFromBracket} className='icon'/>
-                <span className="text nav-text">Logout</span>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <FontAwesomeIcon icon={faCircleQuestion} className='icon'/>
-                <span className="text nav-text">Get Help</span>
-              </a>
-            </li>
-          </div>
+    <div className="user-dashboard">
+      {/* Sidebar Section */}
+      <div className="sidebar">
+        <img className="logo" src={logo} alt="Aegis Bank Logo" />
+        <nav className="menu">
+          {menuItems.map((item, index) => (
+            <Link key={index} to={item.path} className="menu-item" aria-label={item.label}>
+              <img src={item.img} alt={item.label} />
+              <span>{item.label}</span>
+            </Link>
+          ))}
+        </nav>
+        <div className="sidebar-footer">
+          <nav>
+          {footItems.map((item, index) => (
+            <Link key={index} to={item.path} className="menu-item" aria-label={item.label}>
+              <img src={item.img} alt={item.label} />
+              <span>{item.label}</span>
+            </Link>
+          ))}
+          </nav>
         </div>
-      </nav>
+      </div>
 
-      <section className="home"> 
-        <div className="top-bar">
-          <div className="text">Welcome, {userName}. ({userRole})</div>
-          <div className="notification"></div>
+      
+
+      {/* Main Content Section */}
+      <div className="main-content" backgroundImage={back} >
+        <div className="heading">
+          <p> Welcome, {userName}.(Customer)</p>
         </div>
-
+        <img className="background" src={backgroundImage} alt="Background" />
         <Routes>
-          <Route path="/" element={<Navigate to="customers/get-customer-details" replace />} />
-          <Route path="customers" element={<Customers />}>
-            <Route path="get-customer-details" element={<GetCustomerDetails />} />
-            <Route path="add-new-customer" element={<AddCustomers />} />
+          <Route path="customers" element={<Customers/>} >
+            <Route path="add_customer" element={<AddCustomers/>} />
+            <Route path="customer_details" element={<GetCustomerDetails/>} />
           </Route>
-          <Route path="transactions" element={<Transactions />} />
-
-          <Route path="employee" element={<Employee />}>
-            <Route path="add-employee" element={<AddEmployeeForm />} />
-            <Route path="remove-employee" element={<RemoveEmployee />} />
-            <Route path="update-staff-detail" element={<UpdateEmployee />} />
-            <Route path="update-staff-user-detail" element={<UpdateEmployeeUserDetails />} />
-            <Route path="update-staff-branch-detail" element={<UpdateEmployeeBranch />} />
+          <Route path='employees' element={<Employee/>} >
+            <Route path="add_employee" element={<AddEmployeeForm/>}/>\
+            <Route path="remove_employee" element={<RemoveEmployee/>}/>
+            <Route path="update_employee" element={<UpdateEmployee/>}/>
+            <Route path="update_employee_user" element={<UpdateEmployeeUserDetails/>}/>
+            <Route path="update_employee_branch" element={<UpdateEmployeeBranch/>}/>
           </Route>
-          <Route path="reports" element={<Reports />}>
-            <Route path="transaction-report" element={<BranchTransactionReport />} />
-            <Route path="late-loan-payment-report" element={<BranchLatePaymentsReport />} />
+          <Route path="create_account" element={<CreateAccount/>}/>
+          <Route path="transactions" element={<Transactions/>}/>
+          <Route path="reports" element={<Reports/>}>
+            <Route path="branch_transaction_report" element={<BranchTransactionReport/>}/>
+            <Route path="branch_late_payments_report" element={<BranchLatePaymentsReport/>}/>
           </Route>
+          <Route path="manager_loans" element={<ManagerLoans/>}/>
+          <Route path="employee_loans" element={<EmployeeLoans/>}/>
+          <Route path="fixed_deposits" element={<FixedDeposit/>}/>
           <Route path="settings" element={<Settings />} />
-          <Route path="fixed-deposits" element={<ApplyFixedDeposit />} /> 
-          <Route path="createaccount" element={<CreateAccount />} />
-          <Route path="employee-loans" element={<EmployeeLoans />} />
-          <Route path="manager-loans" element={<ManagerLoans />} />
+          <Route path="help" element={<Settings />} />
+          <Route path="logout" element={<Settings />} />
         </Routes>
-      </section>
+      </div>
     </div>
   );
 };
-
-export default DashboardSidebar;
+  
+export default AdminDashboard;
