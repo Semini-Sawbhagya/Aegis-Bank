@@ -101,7 +101,7 @@ const Settings = () => {
 
   return (
     <div className='settings-container'>
-      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px', backgroundColor:'#083010', color:'white'}}>
         <Typography variant="h6">Personal Information</Typography>
         <form noValidate>
           <TextField
@@ -112,6 +112,15 @@ const Settings = () => {
             fullWidth
             margin="normal"
             onChange={(e) => setPersonalInfo({ ...personalInfo, username: e.target.value })}
+            sx={{
+              '& .MuiInputBase-input': { color: 'white' },
+              '& .MuiInputLabel-root': { color: 'white' },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': { borderColor: 'white' },
+                '&:hover fieldset': { borderColor: '#ccc' },
+                '&.Mui-focused fieldset': { borderColor: 'white' },
+              },
+              }}
           />
 
           <TextField
@@ -123,13 +132,16 @@ const Settings = () => {
             fullWidth
             margin="normal"
             onChange={(e) => setPersonalInfo({ ...personalInfo, email: e.target.value })}
-            // sx={{
-            //   height: '56px', 
-            //   '& input': { 
-            //     height: '56px',
-            //     fontSize: '16px'
-            //     }
-            // }}
+            
+            sx={{
+              '& .MuiInputBase-input': { color: 'white' },
+              '& .MuiInputLabel-root': { color: 'white' },
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': { borderColor: 'white' },
+                '&:hover fieldset': { borderColor: '#ccc' },
+                '&.Mui-focused fieldset': { borderColor: 'white' },
+              },
+              }}
           />
 
           <div className="button-container">
@@ -137,7 +149,7 @@ const Settings = () => {
           <Button
             variant="contained"
             startIcon={<PasswordIcon />}
-            sx={{ backgroundColor: '#695CFE',display: 'flex', justifyContent: 'flex-start' ,':hover': { backgroundColor: '#5648CC' } }}
+            sx={{ backgroundColor: '#614915', ':hover': { backgroundColor: '#614915' } }} 
             style={{ marginRight: '8px' }}
             onClick={handleClickOpen}
           >
@@ -147,7 +159,7 @@ const Settings = () => {
             <Button
               variant="contained"
               startIcon={<CancelIcon />}
-              sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+              sx={{ backgroundColor: '#614915', ':hover': { backgroundColor: '#614915' } }} 
               style={{ marginRight: '8px' }}
               onClick={handleCancel} // cancel the changes
             >
@@ -157,7 +169,7 @@ const Settings = () => {
             <Button
               variant="contained"
               startIcon={<SaveIcon />}
-              sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+              sx={{ backgroundColor: '#614915', ':hover': { backgroundColor: '#614915' } }} 
               onClick={handleSave} // save (update) the user information
             >
               Save
@@ -167,7 +179,7 @@ const Settings = () => {
       </Card>
 
       {/* Dialog for changing password */}
-      <Dialog open={open} onClose={handleClose}>
+      <Dialog open={open} onClose={handleClose} backgroundColor='#083010'> 
         <DialogTitle>Change Password</DialogTitle>
         <DialogContent>
           <TextField
@@ -185,14 +197,15 @@ const Settings = () => {
             margin="normal"
             value={newPassword}
             onChange={(e) => setNewPassword(e.target.value)}
+            
           />
         </DialogContent>
 
-        <DialogActions>
+        <DialogActions >
             <Button 
                 onClick={handleClose} 
                 startIcon={<CancelIcon />}
-                sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }} 
+                sx={{ backgroundColor: '#614915', ':hover': { backgroundColor: '#614915' } }} 
                 variant="contained"
             >
                 Cancel
@@ -200,7 +213,7 @@ const Settings = () => {
             <Button 
                 onClick={handlePasswordChange} 
                 endIcon={<CheckCircleIcon  />}
-                sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }} 
+                sx={{ backgroundColor: '#614915', ':hover': { backgroundColor: '#614915' } }} 
                 variant="contained"
             >
                 Submit
