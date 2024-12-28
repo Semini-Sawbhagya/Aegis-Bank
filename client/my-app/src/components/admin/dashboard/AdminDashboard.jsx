@@ -61,14 +61,14 @@ const AdminDashboard = () => {
   };
   // Menu items array for dynamic rendering
   const menuItems = [
-    { path: '/admin_dashboard/customers', img: customerIcon, label: 'Customers' },
-    ...(userRole === 'manager'?[{paht: '/admin_dashboard/employees/add-employee', img: employeeIcon, label: 'Employees' },]:[]),
+    { path: '/admin_dashboard/customers/customer_details', img: customerIcon, label: 'Customers' },
+    ...(userRole === 'manager'?[{path: '/admin_dashboard/employees/add_employee', img: employeeIcon, label: 'Employees' },]:[]),
     { path: '/admin_dashboard/create_account', img: accountIcon, label: 'Create Accounts' },
     { path: '/admin_dashboard/transactions', img: transIcon, label: 'Transactions' },
     { path: '/admin_dashboard/fixed_deposits', img: fixedDepositIcon, label: 'Fixed Deposits' },
     ...(userRole === 'manager' ? [{ path: '/admin_dashboard/manager_loans', img: loansIcon, label: 'Manager Loans' }] : []),
     ...(userRole === 'employee' ? [{ path: '/admin_dashboard/employee_loans', img: loansIcon, label: 'Employee Loans' }] : []),
-    ...(userRole === 'manager'?[{path:'admin_dashboard/reports/transaction-reports',img:reportIcon,label:' Reports'}]:[]),
+    ...(userRole === 'manager'?[{path:'/admin_dashboard/reports/transaction_reports',img:reportIcon,label:' Reports'}]:[]),
   ];
   const footItems=[
     { path: '/admin_dashboard/settings', img: settingsIcon , label: 'Settings' },
@@ -124,7 +124,7 @@ const AdminDashboard = () => {
           <Route path="create_account" element={<CreateAccount/>}/>
           <Route path="transactions" element={<Transactions/>}/>
           <Route path="reports" element={<Reports/>}>
-            <Route path="branch_transaction_report" element={<BranchTransactionReport/>}/>
+            <Route path="transaction_reports" element={<BranchTransactionReport/>}/>
             <Route path="branch_late_payments_report" element={<BranchLatePaymentsReport/>}/>
           </Route>
           <Route path="manager_loans" element={<ManagerLoans/>}/>

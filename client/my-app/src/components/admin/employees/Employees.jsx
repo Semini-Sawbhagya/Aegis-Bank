@@ -31,11 +31,11 @@ const Reports = () => {
           }}
         >
           
-          <Tab label="Add New Employee" component={Link} to="add-employee" />
-          <Tab label="Remove Employee" component={Link} to="remove-employee" />
-          <Tab label="Update Staff Details" component={Link} to="update-staff-detail" />
-          <Tab label="Update User Details" component={Link} to="update-staff-user-detail" />
-          <Tab label="Update Branch Details" component={Link} to="update-staff-branch-detail" />
+          <Tab label="Add New Employee" component={Link} to="add_employee" />
+          <Tab label="Remove Employee" component={Link} to="remove_employee" />
+          <Tab label="Update Staff Details" component={Link} to="update_employee" />
+          <Tab label="Update User Details" component={Link} to="update_employee_user" />
+          <Tab label="Update Branch Details" component={Link} to="update_employee_branch" />
         </Tabs>
       </Box>
       <Outlet />

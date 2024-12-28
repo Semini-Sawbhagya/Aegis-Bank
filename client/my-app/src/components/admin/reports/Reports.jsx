@@ -30,8 +30,8 @@ const Reports = () => {
             },
           }}
         >
-          <Tab label="Transaction Report" component={Link} to="transaction-report" />
-          <Tab label="Late Loan Payment Report" component={Link} to="late-loan-payment-report" />
+          <Tab label="Transaction Report" component={Link} to="transaction_reports" />
+          <Tab label="Late Loan Payment Report" component={Link} to="branch_late_payments_report" />
         </Tabs>
       </Box>
       <Outlet />
