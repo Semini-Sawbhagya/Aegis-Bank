@@ -30,8 +30,8 @@ const Reports = () => {
             },
           }}
         >
-          <Tab label="Get Customer Details" component={Link} to="get-customer-details" />
-          <Tab label="Add New Customer" component={Link} to="add-new-customer" />
+          <Tab label="Get Customer Details" component={Link} to="customer_details" />
+          <Tab label="Add New Customer" component={Link} to="add_customer" />
         </Tabs>
       </Box>
       <Outlet />
