@@ -75,7 +75,7 @@ const UpdateEmployeeBranch = () => {
 
   return (
     <div className="update-employee-branch-container" style={{ paddingBottom: '25px' }}>
-      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:"#083010", color:"white"}}>
         <Typography variant="h6">Update Employee Branch</Typography>
 
         <TextField
@@ -101,6 +101,14 @@ const UpdateEmployeeBranch = () => {
             variant="contained"
             color="primary"
             onClick={handleUpdateBranch}
+            sx={{
+              marginRight: 1,
+              backgroundColor: "#614915",
+              color: "white",
+              '&:hover': {
+                  backgroundColor: "#614915", // Hover effect
+              },
+          }}
           >
             Update Branch
           </Button>

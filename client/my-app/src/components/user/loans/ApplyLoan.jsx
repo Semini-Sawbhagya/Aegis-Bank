@@ -147,21 +147,21 @@ const ApplyLoan = () => {
   }
 
   return (
-    <Card className="shadow" sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
-      <CardContent>
+    <Card className="shadow" sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:'#083010', color:'white'}}>
+      <CardContent sx={{color: 'white'}}>
         <Typography variant="h6" component="div" gutterBottom textAlign={'center'}>
           Apply for a Loan
         </Typography>
 
         {creditLimit !== null && (
-          <Typography variant="body1" color="textSecondary" gutterBottom>
+          <Typography variant="body1" color="white" gutterBottom>
             Your credit limit based on your fixed deposit is: <strong>{creditLimit}</strong>
           </Typography>
         )}
 
         <form onSubmit={handleSubmit}>
           <FormControl fullWidth margin="normal">
-            <InputLabel>Loan Type</InputLabel>
+            <InputLabel sx={{color:'white'}}>Loan Type</InputLabel>
             <Select
               value={loanType}
               onChange={(e) => setLoanType(e.target.value)}
@@ -174,7 +174,7 @@ const ApplyLoan = () => {
           </FormControl>
           
           <FormControl fullWidth margin="normal">
-            <InputLabel>Account Number</InputLabel>
+            <InputLabel sx={{color:'white'}}>Account Number</InputLabel>
             <Select
               value={accountNumber}
               onChange={(e) => setAccountNumber(e.target.value)}
@@ -198,13 +198,7 @@ const ApplyLoan = () => {
             onChange={(e) => setLoanAmount(e.target.value)}
             required
             type="number"
-            // sx={{
-            //   height: '56px', 
-            //   '& input': { 
-            //     height: '56px',
-            //     fontSize: '16px'
-            //     }
-            // }}
+            sx={{color:'white'}}
             inputProps={{
               max: creditLimit, // Set the max limit as the credit limit
             }}
@@ -230,7 +224,14 @@ const ApplyLoan = () => {
             type="submit"
             variant="contained"
             color="primary"
-            sx={{ mt: 2 }}
+            sx={{
+              marginRight: 1,
+              backgroundColor: "#614915",
+              color: "white",
+              '&:hover': {
+                  backgroundColor: "#614915", // Hover effect
+              },
+          }}
           >
             Submit Application
           </Button>

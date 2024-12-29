@@ -20,13 +20,13 @@ const Loans = () => {
           centered
           sx={{
             '& .MuiTabs-indicator': {
-              backgroundColor: '#695CFE', // Change the indicator color
+              backgroundColor: 'rgb(255, 203, 16)', // Change the indicator color
             },
             '& .MuiTab-root': {
               color: '#888888', // Color for inactive tabs
             },
             '& .Mui-selected': {
-              color: '#5648CC', // Color for active tab
+              color: 'rgb(255, 203, 16);', // Color for active tab
             },
           }}
         >

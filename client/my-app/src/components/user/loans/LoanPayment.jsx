@@ -58,7 +58,7 @@ const LoanPayment = () => {
   };
 
   return (
-    <Card className='shadow' sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+    <Card className='shadow' sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:'#083010', color:'white'}}>
       <CardContent>
         <Typography variant="h6" component="div" textAlign='center'>
           Loan Payment
@@ -87,7 +87,14 @@ const LoanPayment = () => {
             margin="normal"
             disabled
           />
-          <Button type="submit" variant="contained" color="secondary">
+          <Button type="submit" variant="contained"sx={{
+                marginRight: 1,
+                backgroundColor: "#614915",
+                color: "white",
+                '&:hover': {
+                    backgroundColor: "#614915", // Hover effect
+                },
+            }}>
             Pay Installment
           </Button>
         </form>

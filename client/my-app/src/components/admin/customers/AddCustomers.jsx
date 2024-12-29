@@ -153,7 +153,7 @@ const AddCustomer = () => {
   return (
     <div className="add-customer-container" style={{ padding: '20px' }}>
       {/* <div className="form-container" style={{borderRadius: '20px'}}> */}
-      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4}}>
+      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, backgroundColor:"#083010", color:"white"}}>
         <Typography variant="h6">Add Customer</Typography>
 
         {/* Customer Type Selector */}
@@ -283,6 +283,11 @@ const AddCustomer = () => {
               fullWidth
               margin="normal"
               onChange={(e) => setOrganizationCustomerInfo({ ...organizationCustomerInfo, name: e.target.value })}
+              sx={{
+                input: { color: 'white' },  // Change the text color
+                backgroundColor: '#083010',  // Change the background color
+                borderRadius: '5px',  // Optional: if you want rounded corners
+              }}
             />
 
             <TextField
@@ -349,7 +354,14 @@ const AddCustomer = () => {
           <Button
             variant="contained"
             startIcon={<CancelIcon />}
-            sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+            sx={{
+              marginRight: 1,
+              backgroundColor: "#614915",
+              color: "white",
+              '&:hover': {
+                  backgroundColor: "#614915", // Hover effect
+              },
+          }}
             style={{ marginRight: '8px' }}
             onClick={handleCancel} // cancel the changes
           >
@@ -359,7 +371,14 @@ const AddCustomer = () => {
           <Button
             variant="contained"
             endIcon={<AddCircleIcon />}
-            sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+            sx={{
+              marginRight: 1,
+              backgroundColor: "#614915",
+              color: "white",
+              '&:hover': {
+                  backgroundColor: "#614915", // Hover effect
+              },
+          }}
             onClick={handleAddCustomer} // save the changes
           >
             Add

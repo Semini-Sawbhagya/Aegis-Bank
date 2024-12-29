@@ -79,7 +79,7 @@ const UpdateEmployeeUserDetails = () => {
 
   return (
     <div className="update-user-details-container" style={{ paddingBottom: '25px' }}>
-      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px', backgroundColor:"#083010", color:"white"}}>
         <Typography variant="h6">Update User Details</Typography>
 
         <TextField
@@ -133,6 +133,14 @@ const UpdateEmployeeUserDetails = () => {
             variant="contained"
             color="primary"
             onClick={handleUpdateUserDetails}
+            sx={{
+              marginRight: 1,
+              backgroundColor: "#614915",
+              color: "white",
+              '&:hover': {
+                  backgroundColor: "#614915", // Hover effect
+              },
+          }}
           >
             Update
           </Button>

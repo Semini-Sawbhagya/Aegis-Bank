@@ -41,7 +41,7 @@ const GetCustomerDetails = () => {
 
   return (
     <div style={{ padding: '20px' }}>
-      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4}}>
+      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4,backgroundColor:"#083010", color:"white"}}>
         <CardContent>
           <Typography variant="h6" gutterBottom>
             Get Customer Details
@@ -61,10 +61,16 @@ const GetCustomerDetails = () => {
           <Button
               className="search-button"
               variant="contained"
-              color="primary"
               onClick={handleSearch}
               //style={{ marginBottom: '20px' }}
-              //sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+              sx={{
+                marginRight: 1,
+                backgroundColor: "#614915",
+                color: "white",
+                '&:hover': {
+                    backgroundColor: "#614915", // Hover effect
+                },
+            }}
           >
               Search
           </Button>
