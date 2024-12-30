@@ -89,6 +89,25 @@ const UpdateEmployeeUserDetails = () => {
           fullWidth
           margin="normal"
           onChange={handleInputChange}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+               borderColor: 'white', // Default border color
+             },
+            '&:hover fieldset': {
+               borderColor: 'white', // Border color on hover
+             },
+            '&.Mui-focused fieldset': {
+               borderColor: 'white', // Border color when focused
+             },
+            },
+            '& .MuiInputLabel-root': {
+              color: 'white', // Label color
+            },
+            '& .MuiInputBase-input': {
+              color: 'white', // Text color
+            },
+          }}
         />
 
         <TextField
@@ -98,6 +117,25 @@ const UpdateEmployeeUserDetails = () => {
           fullWidth
           margin="normal"
           onChange={handleInputChange}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+               borderColor: 'white', // Default border color
+             },
+            '&:hover fieldset': {
+               borderColor: 'white', // Border color on hover
+             },
+            '&.Mui-focused fieldset': {
+               borderColor: 'white', // Border color when focused
+             },
+            },
+            '& .MuiInputLabel-root': {
+              color: 'white', // Label color
+            },
+            '& .MuiInputBase-input': {
+              color: 'white', // Text color
+            },
+          }}
         />
 
         <TextField
@@ -108,6 +146,25 @@ const UpdateEmployeeUserDetails = () => {
           fullWidth
           margin="normal"
           onChange={handleInputChange}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+               borderColor: 'white', // Default border color
+             },
+            '&:hover fieldset': {
+               borderColor: 'white', // Border color on hover
+             },
+            '&.Mui-focused fieldset': {
+               borderColor: 'white', // Border color when focused
+             },
+            },
+            '& .MuiInputLabel-root': {
+              color: 'white', // Label color
+            },
+            '& .MuiInputBase-input': {
+              color: 'white', // Text color
+            },
+          }}
         />
 
         <TextField
@@ -116,13 +173,25 @@ const UpdateEmployeeUserDetails = () => {
           type="email"
           value={userDetails.email}
           fullWidth
-          // sx={{
-          //   height: '56px', 
-          //   '& input': { 
-          //     height: '56px',
-          //     fontSize: '16px'
-          //     }
-          // }}
+          sx={{
+            '& .MuiOutlinedInput-root': {
+            '& fieldset': {
+               borderColor: 'white', // Default border color
+             },
+            '&:hover fieldset': {
+               borderColor: 'white', // Border color on hover
+             },
+            '&.Mui-focused fieldset': {
+               borderColor: 'white', // Border color when focused
+             },
+            },
+            '& .MuiInputLabel-root': {
+              color: 'white', // Label color
+            },
+            '& .MuiInputBase-input': {
+              color: 'white', // Text color
+            },
+          }}
 
           margin="normal"
           onChange={handleInputChange}
