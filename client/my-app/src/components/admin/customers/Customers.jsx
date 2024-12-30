@@ -23,7 +23,7 @@ const Reports = () => {
               backgroundColor: 'rgb(255, 203, 16)', // Change the indicator color
             },
             '& .MuiTab-root': {
-              color: '#888888', // Color for inactive tabs
+              color: 'rgb(255, 203, 16)', // Color for inactive tabs
             },
             '& .Mui-selected': {
               color: 'rgb(255, 203, 16);', // Color for active tab
