@@ -164,6 +164,18 @@ const AddCustomer = () => {
             onChange={(e) => setCustomerType(e.target.value)}
             label="Customer Type"
             align="left"
+            sx={{
+              '& .MuiInputBase-input': {
+                color: 'white', // Selected text color
+              },
+              '& .MuiOutlinedInput-notchedOutline': {
+                borderColor: 'white', // Border color
+              },
+              '& .MuiSelect-icon': {
+                color: 'white', // Dropdown arrow color
+              },
+              
+            }}
           >
             <MenuItem value="individual">Individual</MenuItem>
             <MenuItem value="organization">Organization</MenuItem>
@@ -181,6 +193,25 @@ const AddCustomer = () => {
               fullWidth
               margin="normal"
               onChange={(e) => setIndividualCustomerInfo({ ...individualCustomerInfo, fullName: e.target.value })}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
 
             <TextField
@@ -193,6 +224,25 @@ const AddCustomer = () => {
               margin="normal"
               InputLabelProps={{ shrink: true }}
               onChange={(e) => setIndividualCustomerInfo({ ...individualCustomerInfo, dateOfBirth: e.target.value })}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
 
             <TextField
@@ -203,6 +253,25 @@ const AddCustomer = () => {
               fullWidth
               margin="normal"
               onChange={(e) => setIndividualCustomerInfo({ ...individualCustomerInfo, NIC: e.target.value })}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
 
             <TextField
@@ -213,6 +282,25 @@ const AddCustomer = () => {
               fullWidth
               margin="normal"
               onChange={(e) => setIndividualCustomerInfo({ ...individualCustomerInfo, address: e.target.value })}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
 
             <div className="phone-numbers-container">
@@ -226,6 +314,25 @@ const AddCustomer = () => {
                 margin="normal"
                 style={{ marginRight: '8px' }}
                 onChange={(e) => setIndividualCustomerInfo({ ...individualCustomerInfo, mobileNumber: e.target.value })}
+                sx={{
+                  '& .MuiOutlinedInput-root': {
+                  '& fieldset': {
+                     borderColor: 'white', // Default border color
+                   },
+                  '&:hover fieldset': {
+                     borderColor: 'white', // Border color on hover
+                   },
+                  '&.Mui-focused fieldset': {
+                     borderColor: 'white', // Border color when focused
+                   },
+                  },
+                  '& .MuiInputLabel-root': {
+                    color: 'white', // Label color
+                  },
+                  '& .MuiInputBase-input': {
+                    color: 'white', // Text color
+                  },
+                }}
               />
 
               <TextField
@@ -237,6 +344,25 @@ const AddCustomer = () => {
                 fullWidth
                 margin="normal"
                 onChange={(e) => setIndividualCustomerInfo({ ...individualCustomerInfo, landlineNumber: e.target.value })}
+                sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
               />
             </div>
 
