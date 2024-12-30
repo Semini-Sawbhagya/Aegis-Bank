@@ -43,7 +43,7 @@ const GetCustomerDetails = () => {
     <div style={{ padding: '20px' }}>
       <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4,backgroundColor:"#083010", color:"white"}}>
         <CardContent>
-          <Typography variant="h6" gutterBottom>
+          <Typography variant="h6" gutterBottom sx={{ color: "white" }}>
             Get Customer Details
           </Typography>
           
@@ -55,6 +55,25 @@ const GetCustomerDetails = () => {
               margin="normal"
               value={NICOrLicenseNumber}
               onChange={(e) => setNICOrLicenseNumber(e.target.value)}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
           />
 
           {/* Search Button */}
