@@ -104,18 +104,28 @@ const Transactions = () => {
 
   return (
     <div className='transactions-container'>
-      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:"#083010", color:"white"}}>
         <CardContent>
           <Typography variant="h6">{transactionType === 'deposit' ? 'Deposit' : 'Withdrawal'}</Typography>
 
           {/* Transaction Type Selector */}
           <FormControl fullWidth margin="normal">
-            <InputLabel>Transaction Type</InputLabel>
+            <InputLabel sx={{
+              color: 'white', // Default label color
+              '&.Mui-focused': {
+                color: 'white', // Label color when the input is focused
+              },
+              }}>Transaction Type</InputLabel>
             <Select
               value={transactionType}
               onChange={handleTransactionTypeChange}
               label="Transaction Type"
               align="left"
+              sx={{color:"white",'& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },'& .MuiSelect-icon': {
+                  color: 'white', // Change dropdown arrow color
+                 },}}
             >
               <MenuItem value="withdrawal">Withdrawal</MenuItem>
               <MenuItem value="deposit">Deposit</MenuItem>
@@ -130,6 +140,25 @@ const Transactions = () => {
               margin="normal"
               value={accountNumber}
               onChange={(e) => setAccountNumber(e.target.value)}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
             <TextField
               label="Amount"
@@ -138,7 +167,25 @@ const Transactions = () => {
               margin="normal"
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
-              
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
             <TextField
               label="Description"
@@ -146,13 +193,32 @@ const Transactions = () => {
               margin="normal"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
             
             <div className="button-container">
               <Button
                 variant="contained"
                 startIcon={<CancelIcon />}
-                sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+                sx={{ backgroundColor: " #614915", ':hover': { backgroundColor: "#261502" } }}
                 style={{ marginRight: '8px' }}
                 onClick={resetForm} // Cancel the changes by resetting the form
               >
@@ -162,7 +228,7 @@ const Transactions = () => {
               <Button
                 variant="contained"
                 endIcon={<CheckCircleIcon />}
-                sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+                sx={{ backgroundColor: " #614915", ':hover': { backgroundColor: "#261502" } }}
                 onClick={validateForm} // Show the confirmation dialog
               >
                 Confirm
