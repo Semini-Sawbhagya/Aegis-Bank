@@ -117,7 +117,7 @@ const CreateFixedDeposit = () => {
 
   return (
     <div className="create-account-container">
-      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:"rgb(147, 125, 46)"}}>
         <Typography variant="h6">Create Fixed Deposit</Typography>
         <form onSubmit={handleSubmit} >
           <FormControl fullWidth margin="normal">
@@ -149,6 +149,25 @@ const CreateFixedDeposit = () => {
             label="Account Name"
             value={accountName}
             disabled
+            sx={{
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                 borderColor: 'white', // Default border color
+               },
+              '&:hover fieldset': {
+                 borderColor: 'white', // Border color on hover
+               },
+              '&.Mui-focused fieldset': {
+                 borderColor: 'white', // Border color when focused
+               },
+              },
+              '& .MuiInputLabel-root': {
+                color: 'white', // Label color
+              },
+              '& .MuiInputBase-input': {
+                color: 'white', // Text color
+              },
+            }}
           />
           <FormControl fullWidth margin="normal">
             <InputLabel>FD Plan</InputLabel>
@@ -166,6 +185,7 @@ const CreateFixedDeposit = () => {
             label="Deposit Amount"
             value={depositAmount}
             onChange={(e) => setDepositAmount(e.target.value)}
+            
           />
           <TextField
             fullWidth
@@ -185,7 +205,7 @@ const CreateFixedDeposit = () => {
             <Button
               variant="contained"
               startIcon={<CancelIcon />}
-              sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+              sx={{ backgroundColor: '#614915', ':hover': { backgroundColor: '#614915' } }}
               style={{ marginRight: '8px' }}
               onClick={handleCancel}
             >
@@ -195,7 +215,7 @@ const CreateFixedDeposit = () => {
               type="submit"
               variant="contained"
               endIcon={<AddCircleIcon />}
-              sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+              sx={{ backgroundColor: '#614915', ':hover': { backgroundColor: '#614915' } }}
             >
               Create Fixed Deposit
             </Button>
