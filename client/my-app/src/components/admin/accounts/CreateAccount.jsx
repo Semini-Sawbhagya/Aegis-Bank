@@ -139,11 +139,16 @@ const CreateAccount = () => {
 
   return (
     <div className="create-account-container">
-      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+      <Card sx={{ maxWidth: '600px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:"rgb(147, 125, 46)"}}>
         <Typography variant="h6">Create Account</Typography>
-        <form onSubmit={handleSubmit} className="create-account-form">
+        <form onSubmit={handleSubmit} className="create-account-form"  >
           <FormControl fullWidth margin="normal">
-            <InputLabel>Customer Type</InputLabel>
+            <InputLabel sx={{
+              color: 'white', // Default label color
+              '&.Mui-focused': {
+                color: 'white', // Label color when the input is focused
+              },
+              }}>Customer Type</InputLabel>
             <Select value={customerType} onChange={(e) => setCustomerType(e.target.value)}>
               <MenuItem value="individual">Individual</MenuItem>
               <MenuItem value="organization">Organization</MenuItem>
@@ -156,6 +161,25 @@ const CreateAccount = () => {
               label="ID Number"
               value={idNumber}
               onChange={(e) => setIdNumber(e.target.value)}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
           )}
           {customerType === 'individual' && (
@@ -174,6 +198,25 @@ const CreateAccount = () => {
               label="License Number"
               value={licenseNumber}
               onChange={(e) => setLicenseNumber(e.target.value)}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
           )}
           {customerType === 'organization' && (
@@ -190,6 +233,25 @@ const CreateAccount = () => {
             label="Branch Name"
             value={branchName}
             disabled
+            sx={{
+              '& .MuiOutlinedInput-root': {
+              '& fieldset': {
+                 borderColor: 'white', // Default border color
+               },
+              '&:hover fieldset': {
+                 borderColor: 'white', // Border color on hover
+               },
+              '&.Mui-focused fieldset': {
+                 borderColor: 'white', // Border color when focused
+               },
+              },
+              '& .MuiInputLabel-root': {
+                color: 'white', // Label color
+              },
+              '& .MuiInputBase-input': {
+                color: 'white', // Text color
+              },
+            }}
           />
           {accountType === 'savings' && customerType === 'individual' && (
             <FormControl fullWidth margin="normal">
@@ -229,30 +291,40 @@ const CreateAccount = () => {
               type="number"
               value={initialDeposit}
               onChange={(e) => setInitialDeposit(e.target.value)}            
-              // sx={{
-              //   height: '56px', 
-              //   '& input': { 
-              //   height: '56px',
-              //   fontSize: '16px'
-              //   }
-              // }}
+              sx={{
+                '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                   borderColor: 'white', // Default border color
+                 },
+                '&:hover fieldset': {
+                   borderColor: 'white', // Border color on hover
+                 },
+                '&.Mui-focused fieldset': {
+                   borderColor: 'white', // Border color when focused
+                 },
+                },
+                '& .MuiInputLabel-root': {
+                  color: 'white', // Label color
+                },
+                '& .MuiInputBase-input': {
+                  color: 'white', // Text color
+                },
+              }}
             />
           )}
           <div className="button-container">
             <Button className="cancel-button"
               variant="contained"
-             // startIcon={<CancelIcon />}
-              // sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
-              //style={{ marginRight: '8px' }}
               onClick={handleCancel}
+              sx={{backgroundColor:"#261502"}}
+              style={{ marginRight: '8px' }}
             >
               Cancel
             </Button>
             <Button className="create-account-button"
               type="submit"
               variant="contained"
-              //endIcon={<AddCircleIcon />}
-            //  sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+              sx={{backgroundColor:"#261502"}}
             >
               Create Account
             </Button>
