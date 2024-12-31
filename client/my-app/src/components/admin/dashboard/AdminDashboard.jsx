@@ -122,11 +122,11 @@ const AdminDashboard = () => {
       </div>
 
       <div className="main-content">
-        {isOnDashboard && (
-          <div className="welcome-section">
-            <div className="heading">
+      <div className="heading">
               <p>Welcome, {userName}.</p>
             </div>
+        {isOnDashboard && (
+          <div className="welcome-section">
             <img className="background" src={back} alt="Background" />
             <p className="welcome-message">WELCOME TO AEGIS BANK</p>
           </div>
