@@ -34,7 +34,7 @@ const LatePaymentsReport = () => {
 
   return (
     <div>
-      <Card sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+      <Card sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:"#083010", color:"white"}}>
         <Typography variant="h6">Late Loan Payment Report</Typography>
 
         {/* Loading Indicator */}
@@ -61,7 +61,7 @@ const LatePaymentsReport = () => {
         {/* Table to display late payments */}
         <TableContainer component={Paper}>
           <Table>
-            <TableHead>
+            <TableHead sx={{backgroundColor:"rgba(242, 204, 107, 0.92)"}}>
               <TableRow>
                 <TableCell>Customer ID</TableCell>
                 <TableCell>Mobile Number</TableCell>
@@ -71,7 +71,7 @@ const LatePaymentsReport = () => {
                 <TableCell>Due Date</TableCell>
               </TableRow>
             </TableHead>
-            <TableBody>
+            <TableBody sx={{backgroundColor:"rgba(242, 204, 107, 0.92)"}}>
               {latePayments.map((payment) => (
                 <TableRow key={payment.loan_id}>
                   <TableCell>{payment.customer_id}</TableCell>
