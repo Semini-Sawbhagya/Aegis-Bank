@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route, Link,useNavigate } from 'react-router-dom';
 import MoneyTransfer from '../MoneyTransfer/MoneyTransfer'; // Adjust the path based on your folder structure
 import AccountDetails from '../account-details/AccountDetails';   
 import backgroundImage from '../../../assets/background.jpg';
@@ -22,8 +22,27 @@ import LoanDetails from '../loans/LoanDetails';
 import LoanPayment from '../loans/LoanPayment';
 import TransactionHistory from '../transaction-history/transaction';
 import Settings from "../../user/settings/Settings";
+import { logout } from '../../../services/auth';
 const UserDashboard = () => {
-  // Menu items array for dynamic rendering
+  const navigate = useNavigate();
+  const handleLogout = async () => {
+    const token = Cookies.get('refreshToken');
+   
+    if (!token) {
+      console.error('\\Logout error: Missing token//');
+      return;
+    }
+    try {
+      console.log('Logout request PROCESSING');
+      await logout(token);
+      navigate('/login');
+      
+    } catch (error) {
+      console.error('Logout error:', error.response ? error.response.data : error.message);
+      console.error('Token:', token);
+    }
+  };
+
   const menuItems = [
     { path: '/dashboard/home', img: homeIcon, label: 'Home' },
     { path: '/dashboard/account-details', img: accountIcon, label: 'Account Details' },
@@ -53,16 +72,35 @@ const UserDashboard = () => {
             </Link>
           ))}
         </nav>
-        <div className="sidebar-footer">
-          <nav>
-          {footItems.map((item, index) => (
-            <Link key={index} to={item.path} className="menu-item" aria-label={item.label}>
-              <img src={item.img} alt={item.label} />
-              <span>{item.label}</span>
-            </Link>
-          ))}
-          </nav>
-        </div>
+    <div className="sidebar-footer">
+     <nav>
+    {footItems.map((item, index) => {
+      if (item.label === 'Logout') {
+        // Special case for Logout to handle onClick
+        return (
+          <div
+            key={index}
+            className="menu-item"
+            onClick={handleLogout}
+            role="button"
+            aria-label={item.label}
+            tabIndex={0}
+          >
+            <img src={item.img} alt={item.label} />
+            <span>{item.label}</span>
+          </div>
+        );
+      }
+      return (
+        <Link key={index} to={item.path} className="menu-item" aria-label={item.label}>
+          <img src={item.img} alt={item.label} />
+          <span>{item.label}</span>
+        </Link>
+      );
+    })}
+  </nav>
+</div>
+
       </div>
 
       
