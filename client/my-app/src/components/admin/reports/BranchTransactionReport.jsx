@@ -93,7 +93,7 @@ const TransactionsReport = () => {
 
   return (
     <div>
-      <Card sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px'}}>
+      <Card sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:"#083010", color:"white"}}>
         <Typography variant="h6">Transaction Report</Typography>
 
         {/* Date Range Inputs */}
@@ -119,7 +119,7 @@ const TransactionsReport = () => {
           <Button
               variant="contained"
               endIcon={<DescriptionIcon />}
-              sx={{ backgroundColor: '#695CFE', ':hover': { backgroundColor: '#5648CC' } }}
+              sx={{ backgroundColor: '#614915', ':hover': { backgroundColor: '#614915' } }}
               onClick={fetchReport} 
               style={{ flexShrink: 0 }}
           >
