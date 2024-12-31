@@ -127,6 +127,45 @@
     z-index: -1;
     opacity: 0.1;
   }
+  .welcome-message {
+    background: linear-gradient(
+      to bottom,
+      #ffd700,  /* Bright gold */
+      #f5c518,  /* Medium gold */
+      #b8860b,  /* Darker gold */
+      #f0d787  /* Light reflective gold */
+    );
+    -webkit-background-clip: text; /* For WebKit browsers */
+    -moz-background-clip: text; /* For Firefox (older versions) */
+    background-clip: text; /* Standard property */
+    -webkit-text-fill-color: transparent; /* Ensures the text is transparent */
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 10vw; /* Font size is now 30% of the viewport width */
+    margin: 0;
+    font-weight: 400;
+    text-align: center; /* Ensures the text is centered */
+    text-shadow: 
+      0px 1px 3px rgba(0, 0, 0, 0.3), /* Adds depth and contrast */
+      0px 0px 20px rgba(255, 215, 0, 0.6); /* Glowing gold effect */
+  }
+  
+  .welcome-message::after {
+    background: none;
+    content: attr(data-heading) / "";
+    left: 0;
+    top: 0;
+    z-index: -1;
+    position: absolute;
+    text-shadow: 
+      -1px 0 1px rgba(181, 166, 66, 0.8), /* Subtle dark gold shadows */
+      0 1px 1px rgba(181, 166, 66, 0.8), 
+      5px 5px 10px rgba(0, 0, 0, 0.4),
+      -5px -5px 10px rgba(0, 0, 0, 0.4);
+  }
+  
+  
   
   /* Responsiveness */
   @media (max-width: 768px) {
