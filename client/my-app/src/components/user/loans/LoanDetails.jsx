@@ -27,7 +27,7 @@ const LoanDetails = () => {
   };
 
   return (
-    <Card className="shadow" sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:'#083010', color:'white'}}>
+    <Card className="shadow" sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4, marginTop: '20px',backgroundColor:"rgb(147, 125, 46)"}}>
       <CardContent>
         <Typography variant="h6" component="div" gutterBottom textAlign='center'>
           Loan Details
@@ -45,7 +45,7 @@ const LoanDetails = () => {
                   <TableCell>Penalty</TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
+              <TableBody sx={{backgroundColor:"#615915"}}>
                 {loanDetails.map((loan) => (
                   <TableRow key={loan.loan_id}>
                     <TableCell>{loan.loan_id}</TableCell>
