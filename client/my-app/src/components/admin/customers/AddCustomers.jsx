@@ -158,7 +158,12 @@ const AddCustomer = () => {
 
         {/* Customer Type Selector */}
         <FormControl fullWidth margin="normal">
-          <InputLabel>Customer Type</InputLabel>
+          <InputLabel sx={{
+              color: 'white', // Default label color
+              '&.Mui-focused': {
+                color: 'white', // Label color when the input is focused
+              },
+              }}>Customer Type</InputLabel>
           <Select
             value={customerType}
             onChange={(e) => setCustomerType(e.target.value)}
