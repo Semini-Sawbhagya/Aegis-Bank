@@ -66,14 +66,14 @@ const ManagerLoans = () => {
 
   return (
     <div className="loan-approval-container">
-      <Card sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4}}>
+      <Card sx={{ maxWidth: '800px', margin: 'auto', padding: '20px', borderRadius: 4,backgroundColor:"#083010", color:"white"}}>
       <Typography variant="h6" gutterBottom textAlign={'center'}>
         Pending Loans
       </Typography>
         <CardContent>
           <TableContainer component={Paper}>
             <Table>
-              <TableHead>
+              <TableHead sx={{backgroundColor:" #614915", color:"white"}}>
                 <TableRow>
                   <TableCell>Loan ID</TableCell>
                   <TableCell>Account ID</TableCell>
@@ -82,7 +82,7 @@ const ManagerLoans = () => {
                   <TableCell>Status</TableCell>
                 </TableRow>
               </TableHead>
-              <TableBody>
+              <TableBody  sx={{backgroundColor:" #bc931a", color:"white"}}>
                 {pendingLoans.length > 0 ? (
                   pendingLoans.map((loan) => (
                     <TableRow key={loan.loan_id}>
@@ -96,7 +96,7 @@ const ManagerLoans = () => {
                           <Button
                           variant="contained"
                           color="primary"
-                          sx={{ marginRight: '10px' }} // Adds gap to the right of the Approve button
+                          sx={{ marginRight: '10px', backgroundColor: '#261502' }} // Adds gap to the right of the Approve button
                           onClick={() => handleApprove(loan.loan_id)}
                           >
                           Approve
@@ -104,7 +104,7 @@ const ManagerLoans = () => {
                           <Button
                           variant="contained"
                           sx={{
-                          backgroundColor: 'red',
+                          backgroundColor: '#261502',
                           color: 'white',
                           '&:hover': {
                           backgroundColor: '#b30000', // Darker shade of red on hover
