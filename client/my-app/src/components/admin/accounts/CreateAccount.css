@@ -1,0 +1,30 @@
+.create-account-container {
+    width: 600px;
+    margin: 10px auto;
+    margin-bottom: 20px;
+  }
+  
+  .create-account-form {
+    padding: 20px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: #083010;
+  }
+  
+  .button-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+  }
+  
+  .cancel-button:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Lift the box slightly */
+    background-color: #614915;
+  }
+ 
+  .create-account-button:hover{
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    transform: translateY(-3px); /* Lift the box slightly */
+    background-color: #614915;
+  }
