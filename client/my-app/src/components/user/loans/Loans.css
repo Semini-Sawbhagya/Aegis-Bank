@@ -1,6 +1,6 @@
 .shadow {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1),
-                0 0 15px rgba(222, 162, 11, 0.92); /* Base 3D glow color */
+                0 0 15px rgba(242, 204, 107, 0.92); /* Base 3D glow color */
     transition: transform 0.2s ease, box-shadow 0.2s ease;
   }
   

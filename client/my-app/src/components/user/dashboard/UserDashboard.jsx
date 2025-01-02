@@ -1,7 +1,8 @@
 import React from 'react';
 import { Routes, Route, Link,useNavigate } from 'react-router-dom';
 import MoneyTransfer from '../MoneyTransfer/MoneyTransfer'; // Adjust the path based on your folder structure
-import AccountDetails from '../account-details/AccountDetails';   
+import AccountDetails from '../account-details/AccountDetails'; 
+import AddCard from '../bankCards/addCard';  
 import backgroundImage from '../../../assets/background.jpg';
 import logo from '../../../assets/AegisLogo.png';
 import settingsIcon from '../../../assets/settings0.svg';
@@ -49,6 +50,7 @@ const UserDashboard = () => {
     { path: '/dashboard/money-transfer', img: moneyIcon, label: 'Money Transfer' },
     { path: '/dashboard/transaction-history', img: transIcon, label: 'Transaction History' },
     { path: '/dashboard/loans/apply', img: loansIcon, label: 'Loans' },
+    {path:'/dashboard/add-card',img:loansIcon,label:'Add Card'},
     
   ];
   const footItems=[
@@ -121,6 +123,7 @@ const UserDashboard = () => {
             <Route path="details" element={<LoanDetails/>}/>
           </Route>
           <Route path="transaction-history" element={<TransactionHistory/>}/>
+          <Route path="add-card" element={<AddCard/>}/>
           <Route path="settings" element={<Settings />} />
         </Routes>
       </div>
