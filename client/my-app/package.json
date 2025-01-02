@@ -18,6 +18,7 @@
     "js-cookie": "^3.0.5",
     "react": "^19.0.0",
     "react-chartjs-2": "^5.2.0",
+    "react-credit-cards": "^0.8.3",
     "react-dom": "^19.0.0",
     "react-router-dom": "^7.0.2",
     "react-scripts": "5.0.1",
